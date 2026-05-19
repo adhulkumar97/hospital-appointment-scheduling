@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero-section py-5 mb-5 text-white" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">
+    <div class="container text-center py-5">
+        {% if current_user.is_authenticated %}
+            <h1 class="display-3 fw-bold">Welcome back, {{ current_user.name }}!</h1>
+            <p class="lead fs-3 mt-3">You are logged in as a <strong>{{ current_user.role }}</strong>.</p>
+            <hr class="my-4 bg-light w-25 mx-auto">
+            {% if current_user.role == 'patient' %}
+                <p class="fs-5">Manage your appointments, track your health, and connect with doctors.</p>
+                <a href="{{ url_for('patient_dashboard') }}" class="btn btn-light btn-lg px-4 me-2"><i class="fas fa-tachometer-alt me-2"></i>Go to Dashboard</a>
+            {% elif current_user.role == 'doctor' %}
+                <p class="fs-5">Check your queue, consult patients, and update availability.</p>
+                <a href="{{ url_for('doctor_dashboard') }}" class="btn btn-light btn-lg px-4 me-2"><i class="fas fa-stethoscope me-2"></i>Go to Dashboard</a>
+            {% elif current_user.role == 'admin' %}
+                <p class="fs-5">Monitor system health, manage resources, and oversee operations.</p>
+                <a href="{{ url_for('admin_dashboard') }}" class="btn btn-light btn-lg px-4 me-2"><i class="fas fa-cogs me-2"></i>Go to Dashboard</a>
+            {% endif %}
+        {% else %}
+            <h1 class="display-3 fw-bold">Smart Healthcare, Fair & Fast</h1>
+            <p class="lead fs-3 mt-3">Intelligent patient routing • Load‑balanced queues • Seamless admission</p>
+            <hr class="my-4 bg-light w-25 mx-auto">
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="{{ url_for('patient_register') }}" class="btn btn-light btn-lg px-4"><i class="fas fa-user-plus me-2"></i>Register as Patient</a>
+                <a href="{{ url_for('patient_login') }}" class="btn btn-outline-light btn-lg px-4"><i class="fas fa-sign-in-alt me-2"></i>Patient Login</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% if not current_user.is_authenticated %}
+<div class="container py-4">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <i class="fas fa-balance-scale fa-3x text-primary mb-3"></i>
+                    <h3 class="card-title">Fair Workload</h3>
+                    <p class="card-text">Patients are automatically assigned to the least busy doctor, ensuring balanced distribution and no overload.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                    <h3 class="card-title">No Waiting Queues</h3>
+                    <p class="card-text">Real‑time assignment – your appointment is processed instantly without being stuck in a general queue.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 text-center">
+                <div class="card-body">
+                    <i class="fas fa-hospital-user fa-3x text-primary mb-3"></i>
+                    <h3 class="card-title">Automated Admissions</h3>
+                    <p class="card-text">If needed, the system assigns a bed, tracks admission days, and automatically discharges when the time comes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

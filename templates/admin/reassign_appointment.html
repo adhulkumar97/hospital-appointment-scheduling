@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2><i class="fas fa-exchange-alt me-2"></i>Reassign Appointment #{{ appointment.id }}</h2>
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <p><strong>Patient:</strong> {{ appointment.patient.user.name }}</p>
+                <p><strong>Department:</strong> {{ appointment.department.name }}</p>
+                <p><strong>Current Doctor:</strong> 
+                    {% if appointment.assigned_doctor %}
+                        Dr. {{ appointment.assigned_doctor.user.name }}
+                    {% else %}
+                        Unknown
+                    {% endif %}
+                </p>
+                <hr>
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="doctor_id" class="form-label">Select New Doctor</label>
+                        <select name="doctor_id" id="doctor_id" class="form-control" required>
+                            {% for doc in doctors %}
+                            <option value="{{ doc.id }}">Dr. {{ doc.user.name }} (Queue: {{ doc.current_queue_size }})</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-save me-1"></i>Reassign</button>
+                    <a href="{{ url_for('list_appointments') }}" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

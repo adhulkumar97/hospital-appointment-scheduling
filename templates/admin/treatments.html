@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-notes-medical me-2"></i>All Treatments</h1>
+            <p class="lead mb-0">View all medical treatments and prescriptions</p>
+        </div>
+        <i class="fas fa-hospital-user fa-4x opacity-50"></i>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-white border-0 py-3">
+        <h4 class="mb-0"><i class="fas fa-list-ul me-2 text-primary"></i>Treatment Records</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Date</th>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Type</th>
+                        <th>Notes</th>
+                    </thead>
+                <tbody>
+                    {% for treat in treatments %}
+                    <tr>
+                        <td><i class="far fa-calendar-alt me-1 text-secondary"></i>{{ treat.date.strftime('%Y-%m-%d') }}</td>
+                        <td><i class="fas fa-user me-1 text-secondary"></i>{{ treat.patient.user.name }}</td>
+                        <td><i class="fas fa-user-md me-1 text-secondary"></i>Dr. {{ treat.doctor.user.name }}</td>
+                        <td>
+                            {% if treat.type == 'medication' %}
+                                <span class="badge bg-success">Medication</span>
+                            {% else %}
+                                <span class="badge bg-info text-dark">Admission</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ treat.notes }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+    .card-header {
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .table th, .table td {
+        vertical-align: middle;
+    }
+    .badge {
+        font-weight: 500;
+        padding: 0.4rem 0.7rem;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Header-->
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-bed me-2"></i>All Admissions</h1>
+            <p class="lead mb-0">View and manage patient hospitalizations</p>
+        </div>
+        <i class="fas fa-hospital-user fa-4x opacity-50"></i>
+    </div>
+</div>
+
+<!-- Summary  -->
+<div class="row g-4 mb-5">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100 hover-scale">
+            <div class="card-body text-center">
+                <div class="bg-warning bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                    <i class="fas fa-procedures fa-3x text-warning"></i>
+                </div>
+                <h5 class="card-title text-muted">Active Admissions</h5>
+                <h2 class="fw-bold">{{ admissions|selectattr('status', 'equalto', 'active')|list|length }}</h2>
+                <small class="text-muted">currently hospitalized</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100 hover-scale">
+            <div class="card-body text-center">
+                <div class="bg-success bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                    <i class="fas fa-check-circle fa-3x text-success"></i>
+                </div>
+                <h5 class="card-title text-muted">Discharged Patients</h5>
+                <h2 class="fw-bold">{{ admissions|selectattr('status', 'equalto', 'discharged')|list|length }}</h2>
+                <small class="text-muted">recovered & discharged</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Admissions Table -->
+<div class="card shadow-sm">
+    <div class="card-header bg-white border-0 py-3">
+        <h4 class="mb-0"><i class="fas fa-list-ul me-2 text-primary"></i>Admission Records</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                       
+                        <th>Admission Date</th>
+                          <th>Patient ID</th>
+                        <th>Patient</th>
+                       
+                        <th>Doctor</th>
+                        <th>Bed</th>
+                        <th>Discharge Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for adm in admissions %}
+                    <tr>
+                        <td><i class="far fa-calendar-alt me-1 text-secondary"></i>{{ adm.admission_date.strftime('%Y-%m-%d') }}</td>
+                       <td><span class="badge bg-secondary">{{ adm.patient.id }}</span></td>
+                        <td><i class="fas fa-user me-1 text-secondary"></i>{{ adm.patient.user.name }}</td>
+                        
+                        <td><i class="fas fa-user-md me-1 text-secondary"></i>Dr. {{ adm.doctor.user.name }}</td>
+                        <td><i class="fas fa-bed me-1 text-secondary"></i>Bed {{ adm.bed.id }} (Room {{ adm.bed.room.id }})</td>
+                        <td><i class="far fa-calendar-alt me-1 text-secondary"></i>{{ adm.discharge_date.strftime('%Y-%m-%d') }}</td>
+                        <td>
+                            <span class="badge {% if adm.status == 'active' %}bg-warning text-dark{% else %}bg-secondary{% endif %}">
+                                {{ adm.status|title }}
+                            </span>
+                        </td>
+                        <td>
+                            {% if adm.status == 'active' %}
+                            <form action="{{ url_for('discharge_admission', admission_id=adm.id) }}" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Discharge patient {{ adm.patient.user.name }} early? The bed will become free.')">
+                                    <i class="fas fa-sign-out-alt me-1"></i>Discharge Now
+                                </button>
+                            </form>
+                            {% else %}
+                            <span class="text-muted">—</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-scale {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    }
+    .hover-scale:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+    }
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+    .card-header {
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .table th, .table td {
+        vertical-align: middle;
+    }
+    .badge {
+        font-weight: 500;
+        padding: 0.4rem 0.7rem;
+    }
+    .btn-sm {
+        transition: all 0.2s;
+    }
+    .btn-sm:hover {
+        transform: scale(1.02);
+    }
+</style>
+
+{% endblock %}

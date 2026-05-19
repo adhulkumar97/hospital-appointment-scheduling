@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><i class="fas fa-user-circle me-2"></i>Patient Details: {{ patient.user.name }}</h2>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Personal Information</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Email:</strong> {{ patient.user.email }}</p>
+                <p><strong>Age:</strong> {{ patient.age }}</p>
+                <p><strong>Gender:</strong> {{ patient.gender }}</p>
+                <p><strong>Contact:</strong> {{ patient.contact }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3><i class="fas fa-calendar-alt me-2"></i>Appointments</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Department</th>
+            <th>Disease</th>
+            <th>Symptoms</th>
+            <th>Urgency</th>
+            <th>Status</th>
+            <th>Doctor</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for apt in appointments %}
+        <tr>
+            <td>{{ apt.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+            <td>{{ apt.department.name }}</td>
+            <td>{{ apt.disease_category }}</td>
+            <td>{{ apt.symptoms }}</td>
+            <td>{{ apt.urgency_level }}</td>
+            <td>{{ apt.status }}</td>
+            <td>
+                {% if apt.assigned_doctor %}
+                    Dr. {{ apt.assigned_doctor.user.name }}
+                {% elif apt.status == 'assigned' %}
+                    {% for q in apt.doctor_queues %}
+                        Dr. {{ q.doctor.user.name }}
+                    {% endfor %}
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3><i class="fas fa-procedures me-2"></i>Admissions</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Admission Date</th>
+            <th>Discharge Date</th>
+            <th>Bed</th>
+            <th>Doctor</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for adm in admissions %}
+        <tr>
+            <td>{{ adm.admission_date.strftime('%Y-%m-%d') }}</td>
+            <td>{{ adm.discharge_date.strftime('%Y-%m-%d') }}</td>
+            <td>Bed {{ adm.bed.id }} (Room {{ adm.bed.room.id }})</td>
+            <td>Dr. {{ adm.doctor.user.name }}</td>
+            <td>
+                <span class="badge bg-{% if adm.status == 'active' %}warning{% else %}secondary{% endif %}">
+                    {{ adm.status }}
+                </span>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3><i class="fas fa-prescription-bottle me-2"></i>Treatments</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Notes</th>
+            <th>Doctor</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for treat in treatments %}
+        <tr>
+            <td>{{ treat.date.strftime('%Y-%m-%d') }}</td>
+            <td>{{ treat.type }}</td>
+            <td>{{ treat.notes }}</td>
+            <td>Dr. {{ treat.doctor.user.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

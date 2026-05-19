@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><i class="fas fa-calendar-check me-2"></i>All Appointments</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+         <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Patient</th>
+            <th>Department</th>
+            <th>Disease</th>
+            <th>Urgency</th>
+            <th>Status</th>
+            <th>Doctor</th>
+            <th>Actions</th>
+         </tr>
+    </thead>
+    <tbody>
+        {% for apt in appointments %}
+        <tr>
+            <td>{{ apt.id }}</td>
+            <td>{{ apt.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+            <td>{{ apt.patient.user.name }}</td>
+            <td>{{ apt.department.name }}</td>
+            <td>{{ apt.disease_category }}</td>
+            <td>{{ apt.urgency_level }}</td>
+            <td>{{ apt.status }}</td>
+            <td>
+                {% if apt.assigned_doctor %}
+                    Dr. {{ apt.assigned_doctor.user.name }}
+                {% elif apt.status == 'assigned' %}
+                    {% for q in apt.doctor_queues %}
+                        Dr. {{ q.doctor.user.name }}
+                    {% endfor %}
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+            <td>
+                {% if apt.status == 'assigned' %}
+                <a href="{{ url_for('reassign_appointment', appointment_id=apt.id) }}" class="btn btn-sm btn-warning">
+                    <i class="fas fa-exchange-alt me-1"></i>Reassign
+                </a>
+                {% else %}
+                <span class="text-muted">-</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-balance-scale me-2"></i>Fairness & Priority Audit</h1>
+            <p class="lead mb-0">Live priority scores, fairness adjustments, and anti-starvation status</p>
+        </div>
+        <i class="fas fa-chart-pie fa-4x opacity-50"></i>
+    </div>
+</div>
+
+<!-- Algorithm weights -->
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-white border-0 py-3">
+        <h5 class="mb-0"><i class="fas fa-sliders-h me-2 text-primary"></i>Priority Algorithm Weights (Dissertation Table 2)</h5>
+    </div>
+    <div class="card-body">
+        <div class="row text-center g-3">
+            <div class="col-md-3">
+                <div class="bg-danger bg-opacity-10 rounded p-3">
+                    <h2 class="fw-bold text-danger">{{ w1 }}</h2>
+                    <div class="fw-bold">w₁ — Clinical Urgency</div>
+                    <small class="text-muted">Emergency/Urgent/Routine → 1.0/0.65/0.25</small>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-warning bg-opacity-10 rounded p-3">
+                    <h2 class="fw-bold text-warning">{{ w2 }}</h2>
+                    <div class="fw-bold">w₂ — Waiting Time</div>
+                    <small class="text-muted">Normalised over 240-min window</small>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-info bg-opacity-10 rounded p-3">
+                    <h2 class="fw-bold text-info">{{ w3 }}</h2>
+                    <div class="fw-bold">w₃ — Resource Availability</div>
+                    <small class="text-muted">Based on current doctor queue load</small>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-success bg-opacity-10 rounded p-3">
+                    <h2 class="fw-bold text-success">Adaptive</h2>
+                    <div class="fw-bold">Fairness Adjustment</div>
+                    <small class="text-muted">Dynamic group-level disparity correction</small>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-secondary mt-3 mb-0">
+            <code>Score = 0.45 × urgency + 0.30 × wait_score + 0.15 × resource_score + fairness_adj</code>
+            <br><small>Anti-starvation: any patient waiting &gt; <strong>{{ threshold }} min</strong> receives score = 999 (forced to front)</small>
+        </div>
+    </div>
+</div>
+
+<!-- Stats -->
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-center">
+            <div class="card-body">
+                <div class="fs-1 fw-bold text-primary">{{ entries|length }}</div>
+                <div class="text-muted">Patients in Queue</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-center">
+            <div class="card-body">
+                <div class="fs-1 fw-bold {{ 'text-danger' if starvation_count > 0 else 'text-success' }}">{{ starvation_count }}</div>
+                <div class="text-muted">Starvation Risk (>&gt;{{ threshold }}min)</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-center">
+            <div class="card-body">
+                <div class="fs-1 fw-bold text-warning">{{ fairness_activations }}</div>
+                <div class="text-muted">Fairness Adj. Active</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-center">
+            <div class="card-body">
+                <div class="fs-1 fw-bold text-info">{{ total_fairness_logs }}</div>
+                <div class="text-muted">Total Logged Adjustments</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Group average wait times -->
+{% if group_stats %}
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-white border-0 py-3">
+        <h5 class="mb-0"><i class="fas fa-users me-2 text-primary"></i>Group Average Wait Times (live)</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {% for group, avg_wait in group_stats.items() %}
+            <div class="col-md-4 mb-2">
+                <div class="d-flex justify-content-between align-items-center border rounded p-2">
+                    <span class="fw-bold text-capitalize">{{ group }}</span>
+                    <span class="badge bg-primary">{{ avg_wait | round(1) }} min avg</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Live queue with priority scores -->
+<div class="card shadow-sm">
+    <div class="card-header bg-white border-0 py-3">
+        <h5 class="mb-0"><i class="fas fa-list-ol me-2 text-primary"></i>Priority Queue — Live Scores</h5>
+    </div>
+    <div class="card-body">
+        {% if entries %}
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Queue Pos.</th>
+                        <th>Patient</th>
+                        <th>Urgency</th>
+                        <th>Doctor</th>
+                        <th>Wait (min)</th>
+                        <th>Priority Score</th>
+                        <th>Fairness Adj.</th>
+                        <th>Starvation?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in entries %}
+                    <tr class="{{ 'table-danger' if e.starvation_risk else '' }}">
+                        <td><span class="badge bg-secondary">{{ e.position }}</span></td>
+                        <td>{{ e.patient }}</td>
+                        <td>
+                            {% if e.urgency.lower() in ['emergency', 'high'] %}
+                                <span class="badge bg-danger">{{ e.urgency }}</span>
+                            {% elif e.urgency.lower() in ['urgent', 'medium'] %}
+                                <span class="badge bg-warning text-dark">{{ e.urgency }}</span>
+                            {% else %}
+                                <span class="badge bg-success">{{ e.urgency }}</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ e.doctor }}</td>
+                        <td>{{ e.wait_min }}</td>
+                        <td>
+                            {% if e.priority_score == 999.0 %}
+                                <span class="badge bg-danger">999 ★ OVERRIDE</span>
+                            {% else %}
+                                <span class="badge bg-primary">{{ e.priority_score }}</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if e.fairness_adj > 0 %}
+                                <span class="badge bg-warning text-dark">+{{ e.fairness_adj }}</span>
+                            {% else %}
+                                <span class="text-muted">—</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if e.starvation_risk %}
+                                <span class="badge bg-danger"><i class="fas fa-exclamation-triangle me-1"></i>YES</span>
+                            {% else %}
+                                <span class="badge bg-success">No</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <div class="alert alert-info">No patients currently in queue.</div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

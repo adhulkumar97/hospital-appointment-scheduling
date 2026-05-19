@@ -1,0 +1,1001 @@
+patient_id,arrival_time,age,gender,department,urgency_level,disease_category,fcfs_wait_min,fairness_wait_min,wait_reduction_min,wait_reduction_pct
+1,2025-01-01 08:06,28,Male,Cardiology,routine,Fracture,0,0,0,0
+2,2025-01-01 08:27,48,Other,Neurology,routine,Stroke Symptoms,0,0,0,0
+3,2025-01-01 08:30,77,Male,Orthopaedics,urgent,Fracture,0,0,0,0
+4,2025-01-01 08:32,19,Other,Neurology,routine,Dizziness,0,0,0,0
+5,2025-01-01 08:44,38,Other,Neurology,routine,Dizziness,33,38,-5,-15.2
+6,2025-01-01 08:46,72,Female,Neurology,emergency,Stroke Symptoms,36,31,5,13.9
+7,2025-01-01 09:11,67,Male,Neurology,routine,Dizziness,31,26,5,16.1
+8,2025-01-01 09:13,63,Female,Cardiology,routine,Hypertension,0,0,0,0
+9,2025-01-01 09:20,68,Male,Orthopaedics,routine,Dizziness,0,0,0,0
+10,2025-01-01 09:21,81,Other,Orthopaedics,urgent,Chest Pain,0,0,0,0
+11,2025-01-01 09:29,63,Other,Neurology,routine,Hypertension,38,63,-25,-65.8
+12,2025-01-01 09:34,35,Female,Cardiology,urgent,Stroke Symptoms,0,0,0,0
+13,2025-01-01 09:35,74,Female,Orthopaedics,routine,Chest Pain,21,21,0,0.0
+14,2025-01-01 09:39,55,Male,Neurology,emergency,Fracture,53,33,20,37.7
+15,2025-01-01 09:43,34,Male,Neurology,urgent,Fracture,69,44,25,36.2
+16,2025-01-01 09:44,52,Other,Neurology,routine,Abdominal Pain,73,98,-25,-34.2
+17,2025-01-01 09:44,61,Female,Neurology,routine,Shortness of Breath,103,98,5,4.9
+18,2025-01-01 10:07,46,Male,Neurology,routine,Headache,100,145,-45,-45.0
+19,2025-01-01 10:22,64,Other,Orthopaedics,routine,Fever,0,0,0,0
+20,2025-01-01 10:39,33,Female,Neurology,emergency,Chest Pain,98,23,75,76.5
+21,2025-01-01 10:43,66,Other,Orthopaedics,urgent,Dizziness,3,3,0,0.0
+22,2025-01-01 10:46,47,Other,Neurology,routine,Headache,111,156,-45,-40.5
+23,2025-01-01 11:16,46,Female,Orthopaedics,urgent,Abdominal Pain,0,0,0,0
+24,2025-01-01 11:23,56,Other,Orthopaedics,routine,Shortness of Breath,0,0,0,0
+25,2025-01-01 11:34,22,Male,Cardiology,routine,Fracture,0,0,0,0
+26,2025-01-01 11:40,48,Male,Neurology,urgent,Headache,57,32,25,43.9
+27,2025-01-01 11:43,65,Female,Cardiology,routine,Fever,0,0,0,0
+28,2025-01-01 11:45,37,Female,Orthopaedics,routine,Abdominal Pain,6,6,0,0.0
+29,2025-01-01 11:48,70,Female,Orthopaedics,routine,Headache,25,25,0,0.0
+30,2025-01-01 11:53,65,Other,Neurology,routine,Chest Pain,79,89,-10,-12.7
+31,2025-01-01 11:58,30,Female,Neurology,urgent,Hypertension,89,49,40,44.9
+32,2025-01-01 11:58,63,Other,Neurology,routine,Abdominal Pain,124,134,-10,-8.1
+33,2025-01-01 12:10,76,Male,Neurology,emergency,Hypertension,112,2,110,98.2
+34,2025-01-01 12:30,24,Male,Cardiology,emergency,Stroke Symptoms,0,0,0,0
+35,2025-01-01 12:33,44,Other,Cardiology,routine,Fracture,0,0,0,0
+36,2025-01-01 12:41,45,Other,Orthopaedics,emergency,Hypertension,0,0,0,0
+37,2025-01-01 12:44,18,Male,Cardiology,routine,Back Pain,6,74,-68,-1133.3
+38,2025-01-01 12:44,50,Other,Cardiology,urgent,Fracture,39,6,33,84.6
+39,2025-01-01 12:44,19,Male,Cardiology,routine,Chest Pain,56,76,-20,-35.7
+40,2025-01-01 12:56,20,Female,Cardiology,urgent,Stroke Symptoms,62,27,35,56.5
+41,2025-01-01 13:00,71,Other,Cardiology,urgent,Fracture,90,25,65,72.2
+42,2025-01-01 13:44,75,Female,Orthopaedics,routine,Headache,0,0,0,0
+43,2025-01-01 13:48,75,Male,Orthopaedics,routine,Stroke Symptoms,0,0,0,0
+44,2025-01-01 13:52,84,Other,Orthopaedics,routine,Chest Pain,42,81,-39,-92.9
+45,2025-01-01 14:03,79,Male,Orthopaedics,urgent,Chest Pain,35,31,4,11.4
+46,2025-01-01 14:07,74,Female,Neurology,routine,Headache,15,5,10,66.7
+47,2025-01-01 14:10,36,Other,Cardiology,emergency,Back Pain,23,38,-15,-65.2
+48,2025-01-01 14:13,59,Other,Neurology,emergency,Stroke Symptoms,39,49,-10,-25.6
+49,2025-01-01 14:19,76,Female,Orthopaedics,urgent,Abdominal Pain,54,19,35,64.8
+50,2025-01-01 14:27,32,Other,Neurology,routine,Headache,45,35,10,22.2
+51,2025-01-01 14:29,45,Other,Orthopaedics,routine,Abdominal Pain,55,75,-20,-36.4
+52,2025-01-01 14:29,76,Female,Cardiology,urgent,Fever,24,21,3,12.5
+53,2025-01-01 15:09,72,Female,Orthopaedics,urgent,Headache,39,0,39,100.0
+54,2025-01-01 15:12,78,Male,Neurology,urgent,Back Pain,0,10,-10,0
+55,2025-01-01 15:12,30,Female,Cardiology,emergency,Headache,0,0,0,0
+56,2025-01-01 15:39,25,Other,Neurology,routine,Fracture,8,13,-5,-62.5
+57,2025-01-01 15:44,33,Female,Orthopaedics,routine,Abdominal Pain,30,50,-20,-66.7
+58,2025-01-01 15:50,24,Other,Orthopaedics,urgent,Fever,33,13,20,60.6
+59,2025-01-01 16:37,31,Female,Orthopaedics,routine,Dizziness,21,1,20,95.2
+60,2025-01-01 17:09,79,Other,Cardiology,routine,Fracture,0,0,0,0
+61,2025-01-01 17:18,65,Other,Cardiology,urgent,Back Pain,0,0,0,0
+62,2025-01-01 17:18,72,Male,Neurology,emergency,Stroke Symptoms,0,0,0,0
+63,2025-01-01 17:25,21,Other,Orthopaedics,routine,Stroke Symptoms,0,0,0,0
+64,2025-01-01 17:34,41,Male,Orthopaedics,routine,Dizziness,14,0,14,100.0
+65,2025-01-01 17:51,18,Female,Neurology,urgent,Back Pain,0,0,0,0
+66,2025-01-02 08:03,69,Other,Cardiology,urgent,Stroke Symptoms,0,0,0,0
+67,2025-01-02 08:11,85,Male,Orthopaedics,emergency,Chest Pain,0,0,0,0
+68,2025-01-02 08:32,38,Female,Neurology,urgent,Shortness of Breath,0,0,0,0
+69,2025-01-02 08:48,28,Other,Orthopaedics,urgent,Back Pain,0,0,0,0
+70,2025-01-02 08:57,24,Other,Cardiology,routine,Fracture,0,0,0,0
+71,2025-01-02 09:05,72,Other,Neurology,routine,Shortness of Breath,0,0,0,0
+72,2025-01-02 09:07,45,Female,Neurology,urgent,Fever,0,0,0,0
+73,2025-01-02 09:33,32,Female,Cardiology,routine,Back Pain,0,0,0,0
+74,2025-01-02 09:52,85,Female,Orthopaedics,urgent,Stroke Symptoms,0,0,0,0
+75,2025-01-02 09:54,25,Female,Cardiology,routine,Hypertension,0,0,0,0
+76,2025-01-02 09:57,50,Male,Neurology,emergency,Hypertension,0,0,0,0
+77,2025-01-02 10:21,73,Female,Cardiology,urgent,Chest Pain,2,2,0,0.0
+78,2025-01-02 10:22,47,Other,Neurology,urgent,Abdominal Pain,0,0,0,0
+79,2025-01-02 10:26,68,Male,Orthopaedics,routine,Back Pain,0,0,0,0
+80,2025-01-02 10:36,76,Male,Cardiology,routine,Fever,8,8,0,0.0
+81,2025-01-02 10:41,69,Female,Neurology,routine,Stroke Symptoms,0,0,0,0
+82,2025-01-02 10:43,69,Male,Neurology,routine,Dizziness,14,34,-20,-142.9
+83,2025-01-02 10:47,76,Other,Neurology,emergency,Fracture,44,10,34,77.3
+84,2025-01-02 10:55,31,Female,Neurology,routine,Headache,52,36,16,30.8
+85,2025-01-02 11:36,28,Other,Orthopaedics,urgent,Fever,0,0,0,0
+86,2025-01-02 11:37,60,Male,Neurology,urgent,Back Pain,14,30,-16,-114.3
+87,2025-01-02 11:44,32,Other,Cardiology,routine,Abdominal Pain,0,0,0,0
+88,2025-01-02 11:44,36,Female,Cardiology,routine,Back Pain,0,0,0,0
+89,2025-01-02 11:54,40,Male,Cardiology,urgent,Dizziness,40,40,0,0.0
+90,2025-01-02 12:10,81,Male,Orthopaedics,routine,Headache,0,0,0,0
+91,2025-01-02 12:12,59,Female,Orthopaedics,urgent,Stroke Symptoms,0,0,0,0
+92,2025-01-02 12:17,74,Male,Orthopaedics,routine,Back Pain,30,43,-13,-43.3
+93,2025-01-02 12:29,25,Female,Neurology,emergency,Dizziness,0,0,0,0
+94,2025-01-02 12:29,75,Female,Cardiology,urgent,Dizziness,5,5,0,0.0
+95,2025-01-02 12:31,29,Male,Neurology,emergency,Dizziness,6,11,-5,-83.3
+96,2025-01-02 12:33,23,Female,Orthopaedics,routine,Fever,27,69,-42,-155.6
+97,2025-01-02 12:34,78,Female,Orthopaedics,urgent,Hypertension,63,13,50,79.4
+98,2025-01-02 12:36,61,Male,Cardiology,routine,Shortness of Breath,33,33,0,0.0
+99,2025-01-02 13:00,40,Other,Cardiology,routine,Abdominal Pain,9,9,0,0.0
+100,2025-01-02 13:22,85,Female,Orthopaedics,emergency,Shortness of Breath,28,0,28,100.0
+101,2025-01-02 13:23,54,Female,Cardiology,routine,Back Pain,36,36,0,0.0
+102,2025-01-02 13:32,60,Male,Neurology,urgent,Stroke Symptoms,0,0,0,0
+103,2025-01-02 13:48,67,Other,Cardiology,emergency,Abdominal Pain,11,11,0,0.0
+104,2025-01-02 14:10,60,Male,Orthopaedics,urgent,Stroke Symptoms,0,0,0,0
+105,2025-01-02 14:28,57,Female,Orthopaedics,emergency,Fracture,0,4,-4,0
+106,2025-01-02 14:30,28,Male,Orthopaedics,routine,Fever,15,22,-7,-46.7
+107,2025-01-02 14:34,85,Male,Neurology,urgent,Back Pain,0,0,0,0
+108,2025-01-02 14:45,64,Other,Orthopaedics,emergency,Fever,3,0,3,100.0
+109,2025-01-02 14:48,61,Male,Neurology,emergency,Fracture,0,0,0,0
+110,2025-01-02 14:50,35,Male,Neurology,routine,Hypertension,18,18,0,0.0
+111,2025-01-02 15:12,85,Other,Neurology,urgent,Headache,0,0,0,0
+112,2025-01-02 15:18,66,Male,Neurology,emergency,Stroke Symptoms,29,29,0,0.0
+113,2025-01-02 15:25,74,Male,Cardiology,urgent,Stroke Symptoms,0,0,0,0
+114,2025-01-02 15:44,54,Female,Neurology,emergency,Hypertension,14,14,0,0.0
+115,2025-01-02 15:49,48,Other,Neurology,routine,Hypertension,18,53,-35,-194.4
+116,2025-01-02 15:53,74,Female,Neurology,urgent,Hypertension,25,14,11,44.0
+117,2025-01-02 15:59,85,Other,Neurology,urgent,Fever,54,19,35,64.8
+118,2025-01-02 16:25,35,Other,Cardiology,urgent,Hypertension,0,0,0,0
+119,2025-01-02 16:31,31,Female,Cardiology,routine,Shortness of Breath,0,0,0,0
+120,2025-01-02 16:41,28,Female,Orthopaedics,routine,Headache,0,0,0,0
+121,2025-01-02 17:01,36,Other,Neurology,routine,Shortness of Breath,0,0,0,0
+122,2025-01-02 17:06,62,Female,Cardiology,routine,Hypertension,0,0,0,0
+123,2025-01-02 17:09,82,Female,Neurology,routine,Chest Pain,19,43,-24,-126.3
+124,2025-01-02 17:11,46,Female,Neurology,urgent,Headache,40,40,0,0.0
+125,2025-01-02 17:26,35,Male,Cardiology,emergency,Back Pain,0,0,0,0
+126,2025-01-02 17:30,78,Other,Neurology,emergency,Fracture,48,2,46,95.8
+127,2025-01-02 17:34,50,Male,Cardiology,urgent,Headache,12,12,0,0.0
+128,2025-01-02 17:40,85,Other,Cardiology,urgent,Abdominal Pain,16,16,0,0.0
+129,2025-01-02 17:57,33,Female,Neurology,urgent,Hypertension,29,45,-16,-55.2
+130,2025-01-02 17:58,26,Female,Neurology,emergency,Stroke Symptoms,40,28,12,30.0
+131,2025-01-03 08:00,20,Other,Neurology,emergency,Stroke Symptoms,0,0,0,0
+132,2025-01-03 08:07,36,Other,Orthopaedics,routine,Hypertension,0,0,0,0
+133,2025-01-03 08:19,48,Female,Cardiology,urgent,Stroke Symptoms,0,0,0,0
+134,2025-01-03 08:21,64,Other,Cardiology,routine,Headache,0,0,0,0
+135,2025-01-03 08:32,82,Other,Orthopaedics,emergency,Abdominal Pain,0,0,0,0
+136,2025-01-03 08:59,67,Male,Neurology,routine,Shortness of Breath,0,0,0,0
+137,2025-01-03 09:00,26,Female,Neurology,routine,Chest Pain,0,0,0,0
+138,2025-01-03 09:05,60,Other,Orthopaedics,urgent,Headache,0,0,0,0
+139,2025-01-03 09:09,40,Female,Neurology,emergency,Abdominal Pain,40,40,0,0.0
+140,2025-01-03 09:10,79,Other,Orthopaedics,routine,Shortness of Breath,0,0,0,0
+141,2025-01-03 09:12,76,Other,Cardiology,routine,Headache,0,0,0,0
+142,2025-01-03 09:12,23,Male,Cardiology,emergency,Chest Pain,0,0,0,0
+143,2025-01-03 09:20,78,Female,Neurology,urgent,Abdominal Pain,30,30,0,0.0
+144,2025-01-03 09:27,63,Female,Orthopaedics,urgent,Hypertension,13,13,0,0.0
+145,2025-01-03 09:36,33,Female,Cardiology,routine,Back Pain,0,0,0,0
+146,2025-01-03 09:39,74,Other,Neurology,routine,Fever,30,30,0,0.0
+147,2025-01-03 09:48,81,Male,Neurology,routine,Back Pain,37,71,-34,-91.9
+148,2025-01-03 09:54,28,Female,Neurology,routine,Abdominal Pain,65,66,-1,-1.5
+149,2025-01-03 10:03,41,Other,Cardiology,routine,Fever,0,0,0,0
+150,2025-01-03 10:08,59,Male,Neurology,routine,Headache,67,101,-34,-50.7
+151,2025-01-03 10:11,72,Other,Neurology,routine,Shortness of Breath,98,134,-36,-36.7
+152,2025-01-03 10:15,23,Female,Neurology,urgent,Back Pain,110,10,100,90.9
+153,2025-01-03 10:36,53,Female,Neurology,routine,Stroke Symptoms,123,123,0,0.0
+154,2025-01-03 10:45,69,Other,Cardiology,routine,Headache,0,0,0,0
+155,2025-01-03 10:49,36,Male,Orthopaedics,urgent,Fracture,0,0,0,0
+156,2025-01-03 11:14,34,Male,Orthopaedics,routine,Shortness of Breath,0,0,0,0
+157,2025-01-03 11:23,67,Female,Orthopaedics,emergency,Back Pain,1,1,0,0.0
+158,2025-01-03 11:25,75,Male,Cardiology,routine,Stroke Symptoms,0,0,0,0
+159,2025-01-03 11:36,35,Male,Neurology,routine,Shortness of Breath,64,113,-49,-76.6
+160,2025-01-03 11:39,53,Other,Neurology,routine,Back Pain,110,116,-6,-5.5
+161,2025-01-03 11:45,41,Other,Cardiology,urgent,Chest Pain,0,0,0,0
+162,2025-01-03 11:50,51,Male,Neurology,urgent,Abdominal Pain,100,0,100,100.0
+163,2025-01-03 11:54,54,Male,Orthopaedics,routine,Shortness of Breath,0,0,0,0
+164,2025-01-03 11:55,35,Male,Neurology,routine,Hypertension,130,144,-14,-10.8
+165,2025-01-03 12:03,74,Other,Neurology,routine,Fracture,136,142,-6,-4.4
+166,2025-01-03 12:05,62,Other,Orthopaedics,routine,Back Pain,0,0,0,0
+167,2025-01-03 12:06,56,Female,Orthopaedics,routine,Abdominal Pain,38,49,-11,-28.9
+168,2025-01-03 12:08,83,Female,Orthopaedics,routine,Fracture,47,56,-9,-19.1
+169,2025-01-03 12:13,81,Male,Cardiology,urgent,Fracture,2,2,0,0.0
+170,2025-01-03 12:31,77,Female,Orthopaedics,emergency,Stroke Symptoms,63,13,50,79.4
+171,2025-01-03 12:45,29,Other,Orthopaedics,routine,Fracture,60,69,-9,-15.0
+172,2025-01-03 13:05,70,Other,Neurology,emergency,Shortness of Breath,110,10,100,90.9
+173,2025-01-03 13:14,58,Male,Orthopaedics,routine,Headache,40,101,-61,-152.5
+174,2025-01-03 13:19,84,Other,Neurology,routine,Shortness of Breath,110,110,0,0.0
+175,2025-01-03 13:31,34,Male,Orthopaedics,urgent,Stroke Symptoms,64,14,50,78.1
+176,2025-01-03 13:38,37,Other,Cardiology,urgent,Headache,0,0,0,0
+177,2025-01-03 13:46,46,Other,Cardiology,urgent,Back Pain,0,0,0,0
+178,2025-01-03 14:02,50,Male,Orthopaedics,urgent,Dizziness,42,18,24,57.1
+179,2025-01-03 14:11,56,Male,Orthopaedics,urgent,Dizziness,59,33,26,44.1
+180,2025-01-03 14:22,39,Other,Cardiology,routine,Abdominal Pain,0,0,0,0
+181,2025-01-03 14:22,61,Male,Orthopaedics,routine,Fracture,57,112,-55,-96.5
+182,2025-01-03 14:48,28,Male,Orthopaedics,routine,Chest Pain,57,127,-70,-122.8
+183,2025-01-03 14:56,44,Female,Orthopaedics,emergency,Stroke Symptoms,73,23,50,68.5
+184,2025-01-03 15:00,21,Other,Neurology,routine,Stroke Symptoms,15,15,0,0.0
+185,2025-01-03 15:13,56,Female,Orthopaedics,urgent,Abdominal Pain,76,26,50,65.8
+186,2025-01-03 15:13,76,Female,Orthopaedics,urgent,Fever,82,32,50,61.0
+187,2025-01-03 15:21,71,Female,Cardiology,emergency,Fracture,0,0,0,0
+188,2025-01-03 15:28,36,Other,Cardiology,urgent,Back Pain,0,0,0,0
+189,2025-01-03 15:42,62,Other,Orthopaedics,urgent,Back Pain,82,38,44,53.7
+190,2025-01-03 16:04,31,Other,Cardiology,routine,Back Pain,0,0,0,0
+191,2025-01-03 16:04,75,Female,Neurology,urgent,Headache,0,0,0,0
+192,2025-01-03 16:06,67,Female,Cardiology,urgent,Chest Pain,0,0,0,0
+193,2025-01-03 16:17,59,Male,Neurology,routine,Hypertension,0,0,0,0
+194,2025-01-03 16:17,38,Male,Orthopaedics,routine,Back Pain,53,117,-64,-120.8
+195,2025-01-03 16:20,57,Female,Orthopaedics,urgent,Shortness of Breath,79,44,35,44.3
+196,2025-01-03 16:39,76,Other,Cardiology,urgent,Fever,2,2,0,0.0
+197,2025-01-03 16:39,24,Female,Cardiology,routine,Stroke Symptoms,15,70,-55,-366.7
+198,2025-01-03 16:46,78,Other,Neurology,emergency,Stroke Symptoms,0,0,0,0
+199,2025-01-03 16:49,35,Female,Cardiology,urgent,Headache,27,5,22,81.5
+200,2025-01-03 17:00,64,Female,Orthopaedics,routine,Back Pain,60,80,-20,-33.3
+201,2025-01-03 17:03,42,Other,Cardiology,emergency,Stroke Symptoms,41,13,28,68.3
+202,2025-01-03 17:05,82,Female,Neurology,urgent,Headache,1,1,0,0.0
+203,2025-01-03 17:12,33,Other,Orthopaedics,urgent,Dizziness,62,27,35,56.5
+204,2025-01-03 17:12,61,Female,Cardiology,emergency,Fever,39,17,22,56.4
+205,2025-01-03 17:12,83,Male,Neurology,routine,Fracture,0,0,0,0
+206,2025-01-03 17:22,35,Male,Cardiology,urgent,Chest Pain,42,14,28,66.7
+207,2025-01-03 17:27,37,Female,Neurology,routine,Abdominal Pain,14,14,0,0.0
+208,2025-01-03 17:40,58,Female,Orthopaedics,routine,Fracture,69,84,-15,-21.7
+209,2025-01-03 17:44,61,Other,Orthopaedics,urgent,Dizziness,66,1,65,98.5
+210,2025-01-03 17:50,56,Female,Orthopaedics,routine,Abdominal Pain,95,80,15,15.8
+211,2025-01-04 08:02,32,Female,Cardiology,urgent,Back Pain,0,0,0,0
+212,2025-01-04 08:15,21,Other,Orthopaedics,routine,Dizziness,0,0,0,0
+213,2025-01-04 08:51,47,Other,Neurology,routine,Stroke Symptoms,0,0,0,0
+214,2025-01-04 08:51,85,Male,Orthopaedics,routine,Shortness of Breath,0,0,0,0
+215,2025-01-04 08:55,49,Male,Orthopaedics,routine,Fever,10,46,-36,-360.0
+216,2025-01-04 08:58,20,Male,Orthopaedics,emergency,Headache,43,7,36,83.7
+217,2025-01-04 08:58,44,Female,Neurology,urgent,Fracture,0,0,0,0
+218,2025-01-04 08:59,25,Other,Orthopaedics,urgent,Shortness of Breath,56,26,30,53.6
+219,2025-01-04 09:00,59,Other,Orthopaedics,routine,Hypertension,61,60,1,1.6
+220,2025-01-04 09:02,58,Female,Neurology,routine,Abdominal Pain,31,31,0,0.0
+221,2025-01-04 09:02,63,Female,Neurology,routine,Abdominal Pain,39,74,-35,-89.7
+222,2025-01-04 09:17,79,Other,Orthopaedics,routine,Dizziness,73,74,-1,-1.4
+223,2025-01-04 09:22,56,Other,Cardiology,urgent,Dizziness,0,0,0,0
+224,2025-01-04 09:35,44,Other,Neurology,urgent,Dizziness,48,6,42,87.5
+225,2025-01-04 09:40,62,Female,Neurology,routine,Back Pain,51,43,8,15.7
+226,2025-01-04 09:40,33,Female,Orthopaedics,routine,Dizziness,71,70,1,1.4
+227,2025-01-04 09:51,62,Female,Orthopaedics,routine,Fever,89,90,-1,-1.1
+228,2025-01-04 10:23,54,Male,Cardiology,routine,Dizziness,0,0,0,0
+229,2025-01-04 10:38,50,Female,Cardiology,routine,Back Pain,0,0,0,0
+230,2025-01-04 10:41,52,Other,Cardiology,routine,Hypertension,32,32,0,0.0
+231,2025-01-04 10:48,31,Male,Orthopaedics,routine,Dizziness,53,52,1,1.9
+232,2025-01-04 10:50,24,Male,Orthopaedics,routine,Hypertension,80,81,-1,-1.2
+233,2025-01-04 11:07,47,Other,Orthopaedics,routine,Hypertension,84,83,1,1.2
+234,2025-01-04 11:10,78,Other,Neurology,emergency,Back Pain,0,0,0,0
+235,2025-01-04 11:14,38,Other,Cardiology,emergency,Chest Pain,14,14,0,0.0
+236,2025-01-04 11:14,43,Other,Neurology,urgent,Shortness of Breath,7,0,7,100.0
+237,2025-01-04 11:16,25,Female,Neurology,routine,Back Pain,14,14,0,0.0
+238,2025-01-04 11:38,22,Male,Cardiology,routine,Stroke Symptoms,10,10,0,0.0
+239,2025-01-04 11:42,22,Male,Cardiology,routine,Fever,21,21,0,0.0
+240,2025-01-04 12:02,55,Male,Neurology,routine,Shortness of Breath,0,0,0,0
+241,2025-01-04 12:14,31,Other,Cardiology,routine,Dizziness,24,59,-35,-145.8
+242,2025-01-04 12:15,85,Female,Neurology,routine,Dizziness,5,5,0,0.0
+243,2025-01-04 12:31,52,Female,Cardiology,urgent,Abdominal Pain,22,7,15,68.2
+244,2025-01-04 12:45,76,Male,Cardiology,urgent,Back Pain,43,8,35,81.4
+245,2025-01-04 12:52,61,Male,Orthopaedics,routine,Fracture,8,9,-1,-12.5
+246,2025-01-04 13:03,69,Male,Orthopaedics,routine,Hypertension,18,17,1,5.6
+247,2025-01-04 13:21,69,Male,Orthopaedics,routine,Back Pain,29,30,-1,-3.4
+248,2025-01-04 13:47,59,Female,Cardiology,routine,Fracture,0,0,0,0
+249,2025-01-04 14:28,48,Female,Cardiology,routine,Dizziness,0,0,0,0
+250,2025-01-04 14:39,19,Female,Neurology,urgent,Back Pain,0,0,0,0
+251,2025-01-04 14:50,33,Male,Neurology,urgent,Hypertension,0,0,0,0
+252,2025-01-04 14:52,82,Other,Cardiology,urgent,Fever,0,0,0,0
+253,2025-01-04 14:56,33,Other,Orthopaedics,routine,Dizziness,0,0,0,0
+254,2025-01-04 15:12,46,Other,Neurology,routine,Back Pain,2,2,0,0.0
+255,2025-01-04 15:13,76,Male,Cardiology,urgent,Shortness of Breath,5,5,0,0.0
+256,2025-01-04 15:33,78,Female,Orthopaedics,routine,Back Pain,0,0,0,0
+257,2025-01-04 15:39,28,Male,Orthopaedics,routine,Hypertension,7,7,0,0.0
+258,2025-01-04 15:45,32,Male,Orthopaedics,routine,Back Pain,38,58,-20,-52.6
+259,2025-01-04 15:53,37,Male,Orthopaedics,emergency,Abdominal Pain,43,30,13,30.2
+260,2025-01-04 15:58,44,Male,Orthopaedics,urgent,Shortness of Breath,58,38,20,34.5
+261,2025-01-04 16:08,75,Other,Neurology,routine,Headache,0,0,0,0
+262,2025-01-04 16:12,71,Other,Neurology,routine,Fracture,0,0,0,0
+263,2025-01-04 16:17,57,Female,Cardiology,urgent,Abdominal Pain,0,0,0,0
+264,2025-01-04 16:18,45,Male,Neurology,routine,Dizziness,40,40,0,0.0
+265,2025-01-04 16:34,26,Female,Cardiology,routine,Fever,0,0,0,0
+266,2025-01-04 16:40,22,Female,Cardiology,routine,Headache,12,12,0,0.0
+267,2025-01-04 17:03,71,Other,Cardiology,urgent,Fracture,21,21,0,0.0
+268,2025-01-04 17:09,66,Female,Neurology,urgent,Shortness of Breath,0,0,0,0
+269,2025-01-04 17:13,62,Male,Orthopaedics,emergency,Abdominal Pain,0,0,0,0
+270,2025-01-04 17:15,34,Other,Orthopaedics,emergency,Fever,16,18,-2,-12.5
+271,2025-01-04 17:23,56,Male,Cardiology,routine,Chest Pain,19,19,0,0.0
+272,2025-01-04 17:29,66,Female,Orthopaedics,urgent,Abdominal Pain,4,4,0,0.0
+273,2025-01-04 17:53,37,Female,Cardiology,routine,Shortness of Breath,6,6,0,0.0
+274,2025-01-04 17:58,71,Male,Orthopaedics,urgent,Headache,0,0,0,0
+275,2025-01-05 08:03,26,Male,Cardiology,routine,Hypertension,0,0,0,0
+276,2025-01-05 08:08,24,Other,Cardiology,emergency,Shortness of Breath,0,0,0,0
+277,2025-01-05 08:09,47,Female,Cardiology,urgent,Fever,19,19,0,0.0
+278,2025-01-05 08:40,55,Other,Cardiology,routine,Fracture,13,23,-10,-76.9
+279,2025-01-05 08:45,59,Female,Orthopaedics,urgent,Stroke Symptoms,0,0,0,0
+280,2025-01-05 08:52,70,Male,Cardiology,urgent,Abdominal Pain,11,1,10,90.9
+281,2025-01-05 09:10,40,Other,Cardiology,urgent,Abdominal Pain,28,18,10,35.7
+282,2025-01-05 09:14,24,Female,Neurology,routine,Abdominal Pain,0,0,0,0
+283,2025-01-05 09:15,58,Other,Orthopaedics,routine,Fever,0,0,0,0
+284,2025-01-05 09:23,66,Female,Neurology,routine,Fracture,0,0,0,0
+285,2025-01-05 09:34,46,Male,Orthopaedics,urgent,Shortness of Breath,0,0,0,0
+286,2025-01-05 09:42,25,Female,Orthopaedics,urgent,Fracture,23,23,0,0.0
+287,2025-01-05 09:46,35,Other,Neurology,routine,Abdominal Pain,18,62,-44,-244.4
+288,2025-01-05 09:49,28,Female,Neurology,urgent,Hypertension,24,24,0,0.0
+289,2025-01-05 09:58,42,Other,Neurology,routine,Headache,50,61,-11,-22.0
+290,2025-01-05 10:02,23,Other,Neurology,emergency,Stroke Symptoms,52,2,50,96.2
+291,2025-01-05 10:14,45,Other,Cardiology,routine,Stroke Symptoms,0,0,0,0
+292,2025-01-05 10:15,45,Male,Neurology,urgent,Dizziness,59,9,50,84.7
+293,2025-01-05 10:17,79,Other,Orthopaedics,routine,Headache,0,0,0,0
+294,2025-01-05 10:39,44,Other,Orthopaedics,routine,Stroke Symptoms,1,1,0,0.0
+295,2025-01-05 10:41,54,Female,Cardiology,urgent,Abdominal Pain,0,0,0,0
+296,2025-01-05 11:28,51,Female,Orthopaedics,urgent,Back Pain,0,0,0,0
+297,2025-01-05 11:29,78,Male,Neurology,urgent,Shortness of Breath,9,9,0,0.0
+298,2025-01-05 11:35,58,Female,Neurology,routine,Hypertension,14,14,0,0.0
+299,2025-01-05 11:38,36,Other,Orthopaedics,urgent,Hypertension,0,0,0,0
+300,2025-01-05 12:00,71,Other,Orthopaedics,emergency,Stroke Symptoms,3,3,0,0.0
+301,2025-01-05 12:04,66,Male,Cardiology,urgent,Back Pain,0,0,0,0
+302,2025-01-05 12:10,61,Other,Cardiology,routine,Shortness of Breath,0,0,0,0
+303,2025-01-05 12:12,39,Female,Neurology,urgent,Shortness of Breath,1,1,0,0.0
+304,2025-01-05 12:17,80,Male,Neurology,routine,Fracture,22,22,0,0.0
+305,2025-01-05 12:27,22,Other,Orthopaedics,urgent,Chest Pain,0,0,0,0
+306,2025-01-05 12:30,70,Male,Cardiology,routine,Chest Pain,9,9,0,0.0
+307,2025-01-05 12:30,37,Male,Orthopaedics,emergency,Hypertension,0,0,0,0
+308,2025-01-05 12:31,25,Female,Orthopaedics,emergency,Shortness of Breath,19,19,0,0.0
+309,2025-01-05 12:31,80,Female,Orthopaedics,routine,Stroke Symptoms,31,71,-40,-129.0
+310,2025-01-05 12:38,19,Female,Orthopaedics,emergency,Abdominal Pain,32,24,8,25.0
+311,2025-01-05 12:43,54,Other,Orthopaedics,emergency,Dizziness,47,27,20,42.6
+312,2025-01-05 12:48,31,Male,Orthopaedics,emergency,Fever,62,34,28,45.2
+313,2025-01-05 12:51,42,Male,Orthopaedics,routine,Fracture,61,101,-40,-65.6
+314,2025-01-05 13:06,68,Female,Neurology,routine,Back Pain,0,0,0,0
+315,2025-01-05 13:07,49,Other,Neurology,emergency,Shortness of Breath,22,22,0,0.0
+316,2025-01-05 13:09,28,Other,Cardiology,routine,Dizziness,0,0,0,0
+317,2025-01-05 13:21,69,Male,Orthopaedics,routine,Chest Pain,49,79,-30,-61.2
+318,2025-01-05 13:23,19,Male,Orthopaedics,urgent,Shortness of Breath,79,7,72,91.1
+319,2025-01-05 13:23,60,Female,Cardiology,routine,Shortness of Breath,6,6,0,0.0
+320,2025-01-05 13:51,47,Male,Cardiology,routine,Abdominal Pain,8,8,0,0.0
+321,2025-01-05 13:57,52,Female,Orthopaedics,urgent,Stroke Symptoms,63,8,55,87.3
+322,2025-01-05 14:18,22,Other,Cardiology,emergency,Dizziness,1,1,0,0.0
+323,2025-01-05 14:45,36,Male,Neurology,urgent,Chest Pain,0,0,0,0
+324,2025-01-05 14:53,56,Male,Orthopaedics,routine,Fever,24,37,-13,-54.2
+325,2025-01-05 15:09,60,Female,Cardiology,urgent,Stroke Symptoms,0,0,0,0
+326,2025-01-05 15:13,28,Other,Orthopaedics,urgent,Fracture,22,9,13,59.1
+327,2025-01-05 15:28,73,Male,Neurology,routine,Chest Pain,0,0,0,0
+328,2025-01-05 15:48,68,Other,Cardiology,urgent,Back Pain,0,0,0,0
+329,2025-01-05 15:49,52,Other,Neurology,routine,Chest Pain,0,0,0,0
+330,2025-01-05 16:20,63,Male,Neurology,routine,Shortness of Breath,0,0,0,0
+331,2025-01-05 16:37,66,Male,Neurology,routine,Fever,2,2,0,0.0
+332,2025-01-05 16:38,27,Male,Orthopaedics,emergency,Dizziness,0,0,0,0
+333,2025-01-05 16:55,37,Other,Cardiology,emergency,Fever,0,0,0,0
+334,2025-01-05 17:01,29,Male,Neurology,routine,Back Pain,9,28,-19,-211.1
+335,2025-01-05 17:10,52,Female,Neurology,emergency,Shortness of Breath,19,0,19,100.0
+336,2025-01-05 17:16,75,Female,Cardiology,emergency,Fracture,0,0,0,0
+337,2025-01-05 17:26,21,Male,Orthopaedics,routine,Fever,0,0,0,0
+338,2025-01-05 17:27,59,Other,Orthopaedics,emergency,Headache,0,0,0,0
+339,2025-01-05 17:36,67,Female,Cardiology,routine,Dizziness,0,0,0,0
+340,2025-01-05 17:38,84,Male,Orthopaedics,routine,Abdominal Pain,9,9,0,0.0
+341,2025-01-05 17:43,52,Male,Neurology,urgent,Fracture,6,0,6,100.0
+342,2025-01-05 17:52,39,Male,Neurology,urgent,Fracture,8,26,-18,-225.0
+343,2025-01-05 17:57,27,Female,Neurology,urgent,Dizziness,27,22,5,18.5
+344,2025-01-06 08:09,43,Other,Cardiology,urgent,Shortness of Breath,0,0,0,0
+345,2025-01-06 08:24,68,Male,Cardiology,urgent,Dizziness,0,0,0,0
+346,2025-01-06 08:25,74,Female,Orthopaedics,urgent,Fever,0,0,0,0
+347,2025-01-06 08:28,56,Male,Orthopaedics,urgent,Stroke Symptoms,0,0,0,0
+348,2025-01-06 08:36,58,Female,Orthopaedics,urgent,Hypertension,24,24,0,0.0
+349,2025-01-06 08:39,80,Female,Neurology,urgent,Back Pain,0,0,0,0
+350,2025-01-06 08:40,53,Female,Cardiology,routine,Back Pain,4,4,0,0.0
+351,2025-01-06 08:42,43,Male,Neurology,routine,Back Pain,0,0,0,0
+352,2025-01-06 09:11,21,Other,Orthopaedics,routine,Fracture,0,0,0,0
+353,2025-01-06 09:17,55,Female,Neurology,routine,Hypertension,0,0,0,0
+354,2025-01-06 09:45,81,Other,Cardiology,routine,Fever,0,0,0,0
+355,2025-01-06 09:50,37,Female,Neurology,emergency,Hypertension,0,0,0,0
+356,2025-01-06 09:54,79,Female,Neurology,routine,Headache,13,13,0,0.0
+357,2025-01-06 10:10,71,Other,Orthopaedics,routine,Abdominal Pain,0,0,0,0
+358,2025-01-06 10:13,28,Other,Neurology,routine,Abdominal Pain,0,0,0,0
+359,2025-01-06 10:31,23,Male,Cardiology,emergency,Back Pain,0,0,0,0
+360,2025-01-06 10:32,73,Female,Orthopaedics,routine,Fever,0,0,0,0
+361,2025-01-06 10:38,83,Male,Cardiology,emergency,Dizziness,0,0,0,0
+362,2025-01-06 10:43,46,Other,Orthopaedics,routine,Stroke Symptoms,17,17,0,0.0
+363,2025-01-06 10:45,82,Other,Neurology,urgent,Shortness of Breath,12,12,0,0.0
+364,2025-01-06 10:46,55,Male,Cardiology,urgent,Shortness of Breath,5,5,0,0.0
+365,2025-01-06 11:01,36,Other,Cardiology,urgent,Headache,0,0,0,0
+366,2025-01-06 11:03,84,Male,Neurology,urgent,Shortness of Breath,0,0,0,0
+367,2025-01-06 11:17,75,Female,Neurology,urgent,Headache,15,15,0,0.0
+368,2025-01-06 11:24,32,Other,Neurology,urgent,Chest Pain,14,34,-20,-142.9
+369,2025-01-06 11:35,39,Other,Neurology,emergency,Headache,32,3,29,90.6
+370,2025-01-06 11:47,40,Other,Orthopaedics,routine,Hypertension,0,0,0,0
+371,2025-01-06 11:48,77,Female,Neurology,routine,Abdominal Pain,25,45,-20,-80.0
+372,2025-01-06 11:53,73,Male,Neurology,urgent,Fracture,34,14,20,58.8
+373,2025-01-06 12:02,75,Male,Orthopaedics,urgent,Stroke Symptoms,0,0,0,0
+374,2025-01-06 12:14,45,Other,Neurology,routine,Chest Pain,48,28,20,41.7
+375,2025-01-06 12:15,31,Other,Orthopaedics,urgent,Headache,22,22,0,0.0
+376,2025-01-06 12:28,59,Female,Orthopaedics,routine,Fracture,9,9,0,0.0
+377,2025-01-06 12:33,80,Other,Cardiology,urgent,Dizziness,0,0,0,0
+378,2025-01-06 12:45,67,Other,Orthopaedics,routine,Back Pain,27,27,0,0.0
+379,2025-01-06 12:45,63,Female,Orthopaedics,routine,Headache,42,42,0,0.0
+380,2025-01-06 13:12,56,Other,Orthopaedics,routine,Fracture,50,65,-15,-30.0
+381,2025-01-06 13:15,35,Other,Orthopaedics,routine,Headache,62,82,-20,-32.3
+382,2025-01-06 13:36,41,Male,Cardiology,urgent,Dizziness,0,0,0,0
+383,2025-01-06 13:39,71,Female,Cardiology,urgent,Abdominal Pain,0,0,0,0
+384,2025-01-06 13:40,41,Female,Orthopaedics,routine,Fever,72,87,-15,-20.8
+385,2025-01-06 13:41,39,Other,Orthopaedics,urgent,Fracture,86,21,65,75.6
+386,2025-01-06 13:58,75,Female,Cardiology,urgent,Fracture,13,13,0,0.0
+387,2025-01-06 13:59,35,Female,Neurology,routine,Chest Pain,0,0,0,0
+388,2025-01-06 14:02,81,Other,Neurology,urgent,Abdominal Pain,0,0,0,0
+389,2025-01-06 14:06,74,Other,Neurology,urgent,Fever,31,31,0,0.0
+390,2025-01-06 14:13,46,Male,Cardiology,urgent,Stroke Symptoms,1,1,0,0.0
+391,2025-01-06 14:18,54,Other,Neurology,urgent,Hypertension,31,31,0,0.0
+392,2025-01-06 14:31,81,Other,Neurology,urgent,Stroke Symptoms,41,41,0,0.0
+393,2025-01-06 14:48,52,Male,Cardiology,routine,Stroke Symptoms,0,0,0,0
+394,2025-01-06 14:49,74,Male,Neurology,routine,Abdominal Pain,35,35,0,0.0
+395,2025-01-06 14:56,49,Other,Neurology,routine,Headache,51,51,0,0.0
+396,2025-01-06 15:01,62,Female,Cardiology,urgent,Shortness of Breath,0,0,0,0
+397,2025-01-06 15:02,48,Male,Cardiology,routine,Shortness of Breath,34,34,0,0.0
+398,2025-01-06 15:17,62,Other,Orthopaedics,urgent,Stroke Symptoms,25,10,15,60.0
+399,2025-01-06 15:20,35,Male,Orthopaedics,routine,Fever,22,37,-15,-68.2
+400,2025-01-06 15:32,62,Other,Cardiology,routine,Chest Pain,6,6,0,0.0
+401,2025-01-06 15:51,59,Male,Orthopaedics,routine,Abdominal Pain,26,11,15,57.7
+402,2025-01-06 16:01,52,Other,Neurology,routine,Dizziness,13,13,0,0.0
+403,2025-01-06 16:41,70,Male,Orthopaedics,routine,Headache,0,6,-6,0
+404,2025-01-06 17:09,34,Other,Neurology,routine,Fracture,0,0,0,0
+405,2025-01-06 17:18,68,Male,Orthopaedics,urgent,Back Pain,0,0,0,0
+406,2025-01-06 17:24,71,Other,Orthopaedics,urgent,Dizziness,7,13,-6,-85.7
+407,2025-01-06 17:25,83,Female,Cardiology,urgent,Headache,0,0,0,0
+408,2025-01-06 17:33,80,Female,Orthopaedics,routine,Back Pain,20,20,0,0.0
+409,2025-01-06 17:34,76,Other,Cardiology,urgent,Headache,0,0,0,0
+410,2025-01-06 17:56,68,Male,Orthopaedics,routine,Back Pain,10,16,-6,-60.0
+411,2025-01-07 08:00,52,Female,Neurology,urgent,Hypertension,0,0,0,0
+412,2025-01-07 08:01,34,Other,Neurology,urgent,Back Pain,0,0,0,0
+413,2025-01-07 08:25,24,Other,Neurology,routine,Back Pain,10,10,0,0.0
+414,2025-01-07 08:39,33,Male,Orthopaedics,emergency,Shortness of Breath,0,0,0,0
+415,2025-01-07 08:45,18,Female,Cardiology,routine,Shortness of Breath,0,0,0,0
+416,2025-01-07 08:47,34,Other,Neurology,routine,Hypertension,0,0,0,0
+417,2025-01-07 09:11,29,Female,Neurology,routine,Fracture,14,14,0,0.0
+418,2025-01-07 09:14,39,Female,Neurology,routine,Headache,23,23,0,0.0
+419,2025-01-07 09:26,47,Other,Orthopaedics,emergency,Dizziness,0,0,0,0
+420,2025-01-07 09:35,45,Male,Cardiology,urgent,Headache,0,0,0,0
+421,2025-01-07 09:51,84,Male,Cardiology,urgent,Stroke Symptoms,0,0,0,0
+422,2025-01-07 09:58,61,Other,Cardiology,routine,Chest Pain,12,28,-16,-133.3
+423,2025-01-07 10:07,27,Female,Neurology,routine,Fracture,8,8,0,0.0
+424,2025-01-07 10:10,58,Male,Cardiology,urgent,Headache,16,0,16,100.0
+425,2025-01-07 10:30,35,Female,Neurology,urgent,Fracture,0,0,0,0
+426,2025-01-07 10:31,85,Male,Orthopaedics,routine,Fracture,0,0,0,0
+427,2025-01-07 10:53,62,Female,Orthopaedics,routine,Fracture,0,0,0,0
+428,2025-01-07 10:58,74,Female,Orthopaedics,routine,Fracture,23,58,-35,-152.2
+429,2025-01-07 11:02,33,Male,Cardiology,routine,Headache,0,0,0,0
+430,2025-01-07 11:14,58,Female,Neurology,routine,Back Pain,0,0,0,0
+431,2025-01-07 11:16,28,Other,Cardiology,routine,Dizziness,0,0,0,0
+432,2025-01-07 11:19,54,Other,Orthopaedics,urgent,Stroke Symptoms,24,2,22,91.7
+433,2025-01-07 11:21,56,Other,Orthopaedics,routine,Chest Pain,50,85,-35,-70.0
+434,2025-01-07 11:23,68,Male,Orthopaedics,urgent,Abdominal Pain,55,20,35,63.6
+435,2025-01-07 11:35,67,Female,Cardiology,urgent,Hypertension,17,17,0,0.0
+436,2025-01-07 11:38,85,Male,Neurology,emergency,Stroke Symptoms,0,0,0,0
+437,2025-01-07 11:50,34,Female,Cardiology,routine,Back Pain,16,16,0,0.0
+438,2025-01-07 12:00,40,Female,Orthopaedics,urgent,Fever,53,18,35,66.0
+439,2025-01-07 12:09,26,Other,Cardiology,routine,Chest Pain,18,38,-20,-111.1
+440,2025-01-07 12:10,68,Male,Cardiology,emergency,Chest Pain,46,17,29,63.0
+441,2025-01-07 12:20,72,Female,Orthopaedics,routine,Abdominal Pain,41,33,8,19.5
+442,2025-01-07 12:31,37,Other,Cardiology,routine,Abdominal Pain,45,25,20,44.4
+443,2025-01-07 12:50,44,Other,Neurology,urgent,Headache,0,0,0,0
+444,2025-01-07 12:53,68,Female,Cardiology,routine,Abdominal Pain,24,53,-29,-120.8
+445,2025-01-07 13:02,73,Female,Orthopaedics,routine,Headache,26,69,-43,-165.4
+446,2025-01-07 13:07,29,Male,Cardiology,routine,Chest Pain,59,85,-26,-44.1
+447,2025-01-07 13:08,25,Other,Cardiology,routine,Shortness of Breath,59,169,-110,-186.4
+448,2025-01-07 13:11,19,Male,Orthopaedics,urgent,Fracture,40,25,15,37.5
+449,2025-01-07 13:16,81,Male,Orthopaedics,routine,Chest Pain,62,62,0,0.0
+450,2025-01-07 13:17,51,Other,Orthopaedics,routine,Abdominal Pain,69,104,-35,-50.7
+451,2025-01-07 13:21,33,Other,Cardiology,urgent,Dizziness,95,16,79,83.2
+452,2025-01-07 13:21,52,Female,Cardiology,routine,Back Pain,96,165,-69,-71.9
+453,2025-01-07 13:29,27,Other,Neurology,routine,Stroke Symptoms,0,0,0,0
+454,2025-01-07 13:34,81,Male,Orthopaedics,urgent,Back Pain,94,9,85,90.4
+455,2025-01-07 13:38,50,Male,Cardiology,routine,Back Pain,113,189,-76,-67.3
+456,2025-01-07 13:43,83,Male,Orthopaedics,routine,Headache,93,85,8,8.6
+457,2025-01-07 13:53,78,Male,Cardiology,emergency,Hypertension,114,19,95,83.3
+458,2025-01-07 14:12,71,Male,Cardiology,urgent,Fracture,115,24,91,79.1
+459,2025-01-07 14:28,58,Other,Cardiology,urgent,Fever,113,54,59,52.2
+460,2025-01-07 14:33,33,Female,Cardiology,urgent,Stroke Symptoms,129,58,71,55.0
+461,2025-01-07 14:34,84,Male,Cardiology,routine,Fracture,142,177,-35,-24.6
+462,2025-01-07 14:49,54,Female,Neurology,routine,Headache,0,0,0,0
+463,2025-01-07 14:52,76,Male,Neurology,routine,Back Pain,0,0,0,0
+464,2025-01-07 14:55,56,Other,Cardiology,emergency,Dizziness,142,16,126,88.7
+465,2025-01-07 14:58,81,Female,Cardiology,routine,Shortness of Breath,159,159,0,0.0
+466,2025-01-07 15:04,37,Male,Cardiology,routine,Abdominal Pain,162,197,-35,-21.6
+467,2025-01-07 15:10,62,Male,Neurology,emergency,Chest Pain,29,29,0,0.0
+468,2025-01-07 15:20,18,Female,Orthopaedics,routine,Chest Pain,23,38,-15,-65.2
+469,2025-01-07 15:21,44,Male,Neurology,routine,Dizziness,21,21,0,0.0
+470,2025-01-07 15:24,25,Female,Cardiology,routine,Fever,183,183,0,0.0
+471,2025-01-07 15:26,23,Male,Cardiology,routine,Dizziness,190,225,-35,-18.4
+472,2025-01-07 15:26,65,Other,Orthopaedics,routine,Fever,40,82,-42,-105.0
+473,2025-01-07 15:32,30,Other,Orthopaedics,urgent,Headache,61,19,42,68.9
+474,2025-01-07 15:32,25,Male,Orthopaedics,routine,Fever,84,89,-5,-6.0
+475,2025-01-07 15:46,51,Female,Cardiology,urgent,Hypertension,211,70,141,66.8
+476,2025-01-07 15:56,75,Female,Neurology,routine,Back Pain,3,3,0,0.0
+477,2025-01-07 16:04,31,Male,Cardiology,urgent,Hypertension,202,193,9,4.5
+478,2025-01-07 16:06,58,Female,Cardiology,urgent,Shortness of Breath,226,226,0,0.0
+479,2025-01-07 16:26,75,Male,Orthopaedics,urgent,Back Pain,42,0,42,100.0
+480,2025-01-07 16:39,38,Male,Neurology,urgent,Headache,0,0,0,0
+481,2025-01-07 16:43,45,Male,Neurology,routine,Stroke Symptoms,6,6,0,0.0
+482,2025-01-07 16:43,49,Male,Neurology,routine,Fracture,31,31,0,0.0
+483,2025-01-07 16:47,56,Male,Neurology,routine,Abdominal Pain,52,52,0,0.0
+484,2025-01-07 16:52,75,Female,Cardiology,urgent,Chest Pain,189,189,0,0.0
+485,2025-01-07 17:11,77,Male,Orthopaedics,routine,Hypertension,32,27,5,15.6
+486,2025-01-07 17:21,25,Male,Cardiology,emergency,Headache,186,186,0,0.0
+487,2025-01-07 17:27,69,Male,Cardiology,routine,Fracture,189,189,0,0.0
+488,2025-01-07 17:42,51,Other,Orthopaedics,urgent,Headache,4,9,-5,-125.0
+489,2025-01-07 17:49,43,Male,Cardiology,routine,Chest Pain,178,178,0,0.0
+490,2025-01-07 17:50,60,Male,Neurology,routine,Fracture,14,34,-20,-142.9
+491,2025-01-07 17:53,73,Male,Neurology,emergency,Chest Pain,36,11,25,69.4
+492,2025-01-07 17:54,66,Male,Neurology,routine,Shortness of Breath,55,35,20,36.4
+493,2025-01-08 08:05,41,Male,Cardiology,routine,Back Pain,0,0,0,0
+494,2025-01-08 08:06,49,Male,Neurology,urgent,Fracture,0,0,0,0
+495,2025-01-08 08:20,79,Other,Neurology,routine,Fever,0,0,0,0
+496,2025-01-08 08:29,71,Male,Neurology,emergency,Fever,12,12,0,0.0
+497,2025-01-08 08:51,20,Other,Orthopaedics,urgent,Hypertension,0,0,0,0
+498,2025-01-08 09:03,80,Female,Orthopaedics,routine,Back Pain,0,0,0,0
+499,2025-01-08 09:05,67,Female,Orthopaedics,urgent,Abdominal Pain,21,21,0,0.0
+500,2025-01-08 09:19,46,Other,Cardiology,urgent,Back Pain,0,0,0,0
+501,2025-01-08 09:22,85,Female,Neurology,emergency,Chest Pain,0,0,0,0
+502,2025-01-08 09:49,30,Male,Orthopaedics,urgent,Hypertension,4,4,0,0.0
+503,2025-01-08 10:04,25,Other,Cardiology,urgent,Dizziness,0,0,0,0
+504,2025-01-08 10:16,63,Female,Cardiology,routine,Stroke Symptoms,0,0,0,0
+505,2025-01-08 10:21,58,Male,Cardiology,routine,Fracture,18,18,0,0.0
+506,2025-01-08 10:34,21,Other,Orthopaedics,routine,Back Pain,0,0,0,0
+507,2025-01-08 10:36,36,Other,Neurology,routine,Stroke Symptoms,0,0,0,0
+508,2025-01-08 10:42,57,Other,Cardiology,routine,Shortness of Breath,24,47,-23,-95.8
+509,2025-01-08 11:00,47,Male,Cardiology,urgent,Headache,29,6,23,79.3
+510,2025-01-08 11:31,18,Female,Cardiology,routine,Abdominal Pain,25,10,15,60.0
+511,2025-01-08 11:39,61,Male,Orthopaedics,urgent,Hypertension,0,0,0,0
+512,2025-01-08 11:44,36,Male,Neurology,routine,Chest Pain,0,0,0,0
+513,2025-01-08 11:44,64,Other,Cardiology,routine,Headache,20,35,-15,-75.0
+514,2025-01-08 11:45,30,Other,Neurology,routine,Fever,0,0,0,0
+515,2025-01-08 11:56,73,Male,Neurology,urgent,Fracture,38,38,0,0.0
+516,2025-01-08 12:00,63,Male,Neurology,routine,Back Pain,35,104,-69,-197.1
+517,2025-01-08 12:04,57,Female,Orthopaedics,urgent,Fracture,0,0,0,0
+518,2025-01-08 12:13,18,Male,Neurology,routine,Fracture,56,92,-36,-64.3
+519,2025-01-08 12:15,22,Other,Orthopaedics,routine,Fever,0,0,0,0
+520,2025-01-08 12:25,31,Male,Neurology,urgent,Stroke Symptoms,60,10,50,83.3
+521,2025-01-08 12:38,27,Other,Cardiology,routine,Back Pain,8,0,8,100.0
+522,2025-01-08 12:39,29,Other,Neurology,urgent,Fracture,80,30,50,62.5
+523,2025-01-08 12:41,19,Female,Orthopaedics,routine,Back Pain,0,0,0,0
+524,2025-01-08 12:43,50,Female,Cardiology,urgent,Headache,11,26,-15,-136.4
+525,2025-01-08 12:52,67,Male,Orthopaedics,routine,Chest Pain,13,13,0,0.0
+526,2025-01-08 13:05,81,Female,Neurology,urgent,Fracture,55,5,50,90.9
+527,2025-01-08 13:24,30,Female,Neurology,routine,Abdominal Pain,70,70,0,0.0
+528,2025-01-08 13:27,75,Male,Orthopaedics,routine,Hypertension,4,4,0,0.0
+529,2025-01-08 13:38,58,Male,Cardiology,emergency,Dizziness,0,0,0,0
+530,2025-01-08 13:43,39,Female,Cardiology,urgent,Headache,0,1,-1,0
+531,2025-01-08 13:44,29,Other,Cardiology,routine,Headache,14,14,0,0.0
+532,2025-01-08 14:00,21,Other,Orthopaedics,urgent,Shortness of Breath,0,0,0,0
+533,2025-01-08 14:29,73,Other,Orthopaedics,urgent,Fracture,0,0,0,0
+534,2025-01-08 14:32,42,Male,Cardiology,urgent,Back Pain,0,0,0,0
+535,2025-01-08 14:38,54,Female,Orthopaedics,urgent,Abdominal Pain,0,0,0,0
+536,2025-01-08 14:38,80,Female,Cardiology,urgent,Chest Pain,10,10,0,0.0
+537,2025-01-08 14:39,29,Female,Neurology,urgent,Chest Pain,0,0,0,0
+538,2025-01-08 14:54,43,Female,Orthopaedics,urgent,Stroke Symptoms,10,10,0,0.0
+539,2025-01-08 14:57,55,Other,Cardiology,emergency,Fracture,10,10,0,0.0
+540,2025-01-08 15:04,68,Female,Neurology,routine,Headache,10,40,-30,-300.0
+541,2025-01-08 15:05,67,Male,Orthopaedics,urgent,Dizziness,8,8,0,0.0
+542,2025-01-08 15:09,75,Male,Neurology,urgent,Back Pain,15,25,-10,-66.7
+543,2025-01-08 15:10,46,Female,Neurology,emergency,Shortness of Breath,49,4,45,91.8
+544,2025-01-08 15:15,30,Male,Orthopaedics,routine,Chest Pain,24,33,-9,-37.5
+545,2025-01-08 15:16,47,Female,Neurology,emergency,Abdominal Pain,48,8,40,83.3
+546,2025-01-08 15:26,78,Female,Neurology,routine,Abdominal Pain,53,43,10,18.9
+547,2025-01-08 15:30,28,Female,Cardiology,routine,Shortness of Breath,0,0,0,0
+548,2025-01-08 15:33,84,Other,Orthopaedics,urgent,Chest Pain,15,6,9,60.0
+549,2025-01-08 15:36,33,Male,Orthopaedics,routine,Stroke Symptoms,47,58,-11,-23.4
+550,2025-01-08 15:40,45,Male,Neurology,routine,Fracture,44,99,-55,-125.0
+551,2025-01-08 15:47,28,Female,Cardiology,routine,Chest Pain,0,0,0,0
+552,2025-01-08 15:55,36,Other,Neurology,routine,Hypertension,74,164,-90,-121.6
+553,2025-01-08 15:55,26,Other,Neurology,routine,Back Pain,79,169,-90,-113.9
+554,2025-01-08 15:57,59,Other,Orthopaedics,emergency,Fever,32,17,15,46.9
+555,2025-01-08 16:06,84,Male,Orthopaedics,routine,Shortness of Breath,43,32,11,25.6
+556,2025-01-08 16:08,36,Male,Cardiology,routine,Fever,12,12,0,0.0
+557,2025-01-08 16:16,30,Male,Orthopaedics,routine,Headache,57,72,-15,-26.3
+558,2025-01-08 16:17,51,Female,Orthopaedics,routine,Back Pain,82,102,-20,-24.4
+559,2025-01-08 16:19,78,Other,Neurology,urgent,Stroke Symptoms,100,15,85,85.0
+560,2025-01-08 16:36,69,Male,Neurology,emergency,Fever,88,23,65,73.9
+561,2025-01-08 16:50,78,Male,Neurology,emergency,Hypertension,94,19,75,79.8
+562,2025-01-08 16:53,56,Female,Neurology,routine,Chest Pain,101,156,-55,-54.5
+563,2025-01-08 17:03,35,Male,Neurology,urgent,Headache,101,26,75,74.3
+564,2025-01-08 17:11,52,Female,Orthopaedics,urgent,Shortness of Breath,52,13,39,75.0
+565,2025-01-08 17:13,74,Male,Orthopaedics,routine,Headache,76,65,11,14.5
+566,2025-01-08 17:15,65,Other,Neurology,urgent,Shortness of Breath,124,49,75,60.5
+567,2025-01-08 17:19,57,Male,Orthopaedics,routine,Fracture,79,90,-11,-13.9
+568,2025-01-08 17:21,21,Other,Neurology,routine,Fracture,123,133,-10,-8.1
+569,2025-01-08 17:30,22,Male,Cardiology,urgent,Chest Pain,0,0,0,0
+570,2025-01-08 17:32,65,Female,Neurology,urgent,Hypertension,142,37,105,73.9
+571,2025-01-08 17:49,33,Other,Orthopaedics,routine,Fever,90,79,11,12.2
+572,2025-01-08 17:58,75,Female,Cardiology,routine,Back Pain,0,0,0,0
+573,2025-01-09 08:19,62,Other,Neurology,urgent,Stroke Symptoms,0,0,0,0
+574,2025-01-09 08:20,21,Female,Neurology,urgent,Headache,0,0,0,0
+575,2025-01-09 08:26,46,Male,Cardiology,urgent,Stroke Symptoms,0,0,0,0
+576,2025-01-09 08:27,70,Female,Orthopaedics,routine,Hypertension,0,0,0,0
+577,2025-01-09 08:27,34,Female,Orthopaedics,routine,Chest Pain,0,0,0,0
+578,2025-01-09 08:31,50,Male,Orthopaedics,routine,Chest Pain,46,66,-20,-43.5
+579,2025-01-09 08:41,66,Female,Neurology,routine,Dizziness,13,13,0,0.0
+580,2025-01-09 08:51,77,Male,Neurology,routine,Dizziness,4,4,0,0.0
+581,2025-01-09 08:53,31,Female,Orthopaedics,urgent,Stroke Symptoms,24,24,0,0.0
+582,2025-01-09 09:10,54,Other,Orthopaedics,emergency,Back Pain,42,7,35,83.3
+583,2025-01-09 09:17,61,Male,Cardiology,urgent,Shortness of Breath,0,0,0,0
+584,2025-01-09 09:23,51,Female,Orthopaedics,routine,Back Pain,44,29,15,34.1
+585,2025-01-09 09:25,37,Male,Orthopaedics,routine,Dizziness,47,77,-30,-63.8
+586,2025-01-09 09:44,69,Other,Cardiology,routine,Chest Pain,0,0,0,0
+587,2025-01-09 09:50,21,Other,Orthopaedics,routine,Fracture,67,72,-5,-7.5
+588,2025-01-09 09:57,69,Female,Neurology,routine,Dizziness,0,0,0,0
+589,2025-01-09 09:57,42,Other,Cardiology,urgent,Stroke Symptoms,0,0,0,0
+590,2025-01-09 10:03,78,Other,Orthopaedics,urgent,Hypertension,59,24,35,59.3
+591,2025-01-09 10:09,56,Other,Orthopaedics,routine,Back Pain,88,103,-15,-17.0
+592,2025-01-09 10:10,55,Male,Orthopaedics,routine,Abdominal Pain,97,122,-25,-25.8
+593,2025-01-09 10:18,41,Other,Cardiology,emergency,Dizziness,14,14,0,0.0
+594,2025-01-09 10:36,63,Male,Neurology,routine,Headache,0,0,0,0
+595,2025-01-09 10:47,65,Female,Neurology,urgent,Fever,0,0,0,0
+596,2025-01-09 10:51,78,Male,Neurology,urgent,Shortness of Breath,31,31,0,0.0
+597,2025-01-09 11:06,27,Other,Orthopaedics,emergency,Stroke Symptoms,81,26,55,67.9
+598,2025-01-09 11:23,66,Male,Cardiology,urgent,Abdominal Pain,0,0,0,0
+599,2025-01-09 11:24,35,Male,Neurology,routine,Chest Pain,2,2,0,0.0
+600,2025-01-09 11:36,76,Other,Neurology,routine,Fever,21,21,0,0.0
+601,2025-01-09 11:43,80,Male,Orthopaedics,emergency,Fracture,54,9,45,83.3
+602,2025-01-09 11:49,25,Other,Cardiology,urgent,Back Pain,0,0,0,0
+603,2025-01-09 12:04,38,Male,Neurology,emergency,Hypertension,12,12,0,0.0
+604,2025-01-09 12:08,73,Other,Cardiology,urgent,Fracture,0,0,0,0
+605,2025-01-09 12:13,67,Female,Neurology,routine,Fever,23,23,0,0.0
+606,2025-01-09 12:18,65,Other,Orthopaedics,emergency,Hypertension,29,24,5,17.2
+607,2025-01-09 12:22,20,Male,Neurology,routine,Abdominal Pain,25,25,0,0.0
+608,2025-01-09 12:26,62,Male,Orthopaedics,routine,Hypertension,31,36,-5,-16.1
+609,2025-01-09 12:44,57,Other,Cardiology,urgent,Fever,0,0,0,0
+610,2025-01-09 13:08,76,Female,Cardiology,urgent,Dizziness,0,0,0,0
+611,2025-01-09 13:18,73,Female,Orthopaedics,routine,Abdominal Pain,0,0,0,0
+612,2025-01-09 13:19,63,Female,Cardiology,routine,Back Pain,0,0,0,0
+613,2025-01-09 13:34,47,Male,Cardiology,routine,Fever,9,35,-26,-288.9
+614,2025-01-09 13:35,20,Other,Cardiology,urgent,Hypertension,34,8,26,76.5
+615,2025-01-09 13:45,22,Female,Cardiology,routine,Headache,48,33,15,31.2
+616,2025-01-09 13:58,24,Other,Orthopaedics,urgent,Dizziness,0,0,0,0
+617,2025-01-09 14:17,20,Other,Cardiology,routine,Headache,27,86,-59,-218.5
+618,2025-01-09 14:24,66,Female,Cardiology,emergency,Fever,59,35,24,40.7
+619,2025-01-09 14:28,37,Other,Neurology,emergency,Shortness of Breath,0,0,0,0
+620,2025-01-09 14:28,71,Female,Orthopaedics,urgent,Chest Pain,0,0,0,0
+621,2025-01-09 14:43,35,Female,Orthopaedics,routine,Abdominal Pain,0,0,0,0
+622,2025-01-09 14:46,33,Other,Cardiology,urgent,Abdominal Pain,48,22,26,54.2
+623,2025-01-09 15:11,43,Male,Cardiology,urgent,Shortness of Breath,32,8,24,75.0
+624,2025-01-09 15:18,70,Female,Orthopaedics,routine,Hypertension,0,0,0,0
+625,2025-01-09 15:45,44,Female,Cardiology,urgent,Abdominal Pain,24,9,15,62.5
+626,2025-01-09 15:52,18,Male,Neurology,routine,Back Pain,0,0,0,0
+627,2025-01-09 15:56,81,Other,Cardiology,emergency,Headache,22,33,-11,-50.0
+628,2025-01-09 16:01,30,Male,Cardiology,emergency,Abdominal Pain,37,32,5,13.5
+629,2025-01-09 16:04,55,Female,Orthopaedics,routine,Hypertension,0,0,0,0
+630,2025-01-09 17:06,23,Male,Cardiology,urgent,Headache,0,0,0,0
+631,2025-01-09 17:12,32,Female,Neurology,routine,Back Pain,0,0,0,0
+632,2025-01-09 17:37,39,Male,Cardiology,emergency,Chest Pain,0,0,0,0
+633,2025-01-09 17:37,29,Female,Neurology,urgent,Stroke Symptoms,0,0,0,0
+634,2025-01-09 17:39,69,Male,Neurology,urgent,Fracture,23,23,0,0.0
+635,2025-01-09 17:49,79,Female,Neurology,urgent,Dizziness,23,23,0,0.0
+636,2025-01-09 17:52,34,Male,Orthopaedics,routine,Fracture,0,0,0,0
+637,2025-01-10 08:10,71,Male,Cardiology,routine,Fracture,0,0,0,0
+638,2025-01-10 08:12,74,Other,Neurology,routine,Stroke Symptoms,0,0,0,0
+639,2025-01-10 08:29,21,Other,Neurology,urgent,Back Pain,0,0,0,0
+640,2025-01-10 08:42,80,Female,Orthopaedics,routine,Fracture,0,0,0,0
+641,2025-01-10 09:10,26,Male,Neurology,emergency,Shortness of Breath,0,0,0,0
+642,2025-01-10 09:27,85,Other,Neurology,urgent,Chest Pain,0,0,0,0
+643,2025-01-10 09:28,61,Male,Orthopaedics,routine,Stroke Symptoms,0,0,0,0
+644,2025-01-10 09:48,73,Male,Orthopaedics,routine,Stroke Symptoms,0,0,0,0
+645,2025-01-10 10:36,67,Female,Cardiology,routine,Shortness of Breath,0,0,0,0
+646,2025-01-10 11:00,19,Male,Orthopaedics,emergency,Stroke Symptoms,0,0,0,0
+647,2025-01-10 11:06,81,Female,Cardiology,routine,Abdominal Pain,0,0,0,0
+648,2025-01-10 11:15,48,Female,Cardiology,routine,Shortness of Breath,11,11,0,0.0
+649,2025-01-10 11:37,46,Other,Neurology,urgent,Chest Pain,0,0,0,0
+650,2025-01-10 12:09,28,Male,Neurology,routine,Fever,0,0,0,0
+651,2025-01-10 12:11,81,Male,Orthopaedics,urgent,Shortness of Breath,0,0,0,0
+652,2025-01-10 12:24,20,Other,Cardiology,urgent,Shortness of Breath,0,0,0,0
+653,2025-01-10 12:34,18,Other,Neurology,emergency,Chest Pain,0,0,0,0
+654,2025-01-10 12:36,56,Other,Orthopaedics,routine,Stroke Symptoms,0,0,0,0
+655,2025-01-10 12:42,76,Other,Orthopaedics,routine,Hypertension,4,39,-35,-875.0
+656,2025-01-10 12:45,76,Male,Neurology,routine,Chest Pain,9,9,0,0.0
+657,2025-01-10 12:46,64,Female,Orthopaedics,urgent,Stroke Symptoms,40,0,40,100.0
+658,2025-01-10 13:30,46,Other,Cardiology,routine,Headache,0,0,0,0
+659,2025-01-10 13:32,84,Other,Neurology,emergency,Dizziness,0,0,0,0
+660,2025-01-10 13:44,81,Male,Cardiology,urgent,Chest Pain,0,0,0,0
+661,2025-01-10 13:48,50,Male,Orthopaedics,emergency,Fever,0,0,0,0
+662,2025-01-10 13:49,45,Female,Cardiology,routine,Headache,30,31,-1,-3.3
+663,2025-01-10 13:55,71,Male,Cardiology,urgent,Back Pain,25,24,1,4.0
+664,2025-01-10 14:03,75,Male,Orthopaedics,emergency,Stroke Symptoms,0,5,-5,0
+665,2025-01-10 14:10,81,Male,Orthopaedics,urgent,Abdominal Pain,0,1,-1,0
+666,2025-01-10 14:19,73,Other,Orthopaedics,emergency,Chest Pain,4,9,-5,-125.0
+667,2025-01-10 14:28,40,Male,Neurology,routine,Abdominal Pain,0,0,0,0
+668,2025-01-10 15:10,59,Female,Cardiology,routine,Headache,0,0,0,0
+669,2025-01-10 15:18,49,Other,Neurology,routine,Fever,0,0,0,0
+670,2025-01-10 15:23,35,Female,Neurology,urgent,Dizziness,0,0,0,0
+671,2025-01-10 15:25,58,Female,Orthopaedics,emergency,Abdominal Pain,0,0,0,0
+672,2025-01-10 15:26,44,Male,Orthopaedics,routine,Hypertension,0,0,0,0
+673,2025-01-10 15:41,34,Other,Neurology,routine,Back Pain,17,17,0,0.0
+674,2025-01-10 15:50,59,Other,Orthopaedics,routine,Fracture,0,0,0,0
+675,2025-01-10 15:55,71,Female,Neurology,routine,Abdominal Pain,13,13,0,0.0
+676,2025-01-10 15:56,19,Female,Orthopaedics,routine,Dizziness,20,20,0,0.0
+677,2025-01-10 16:15,24,Male,Cardiology,routine,Fever,0,0,0,0
+678,2025-01-10 16:19,54,Male,Cardiology,routine,Dizziness,0,0,0,0
+679,2025-01-10 16:21,55,Other,Cardiology,routine,Chest Pain,44,44,0,0.0
+680,2025-01-10 16:26,75,Female,Orthopaedics,urgent,Chest Pain,14,34,-20,-142.9
+681,2025-01-10 16:38,67,Male,Orthopaedics,emergency,Abdominal Pain,28,2,26,92.9
+682,2025-01-10 16:49,24,Other,Orthopaedics,urgent,Dizziness,26,17,9,34.6
+683,2025-01-10 16:54,58,Other,Neurology,routine,Fever,0,0,0,0
+684,2025-01-10 17:05,50,Other,Cardiology,routine,Chest Pain,4,4,0,0.0
+685,2025-01-10 17:11,65,Other,Neurology,urgent,Hypertension,0,0,0,0
+686,2025-01-10 17:29,42,Male,Orthopaedics,routine,Stroke Symptoms,0,6,-6,0
+687,2025-01-10 17:43,40,Male,Cardiology,urgent,Headache,12,12,0,0.0
+688,2025-01-11 08:12,72,Male,Cardiology,routine,Fever,0,0,0,0
+689,2025-01-11 08:14,50,Male,Neurology,urgent,Fracture,0,0,0,0
+690,2025-01-11 08:17,37,Male,Neurology,emergency,Fracture,0,0,0,0
+691,2025-01-11 08:46,56,Other,Orthopaedics,routine,Chest Pain,0,0,0,0
+692,2025-01-11 08:52,27,Female,Orthopaedics,urgent,Abdominal Pain,0,0,0,0
+693,2025-01-11 08:55,41,Male,Neurology,routine,Abdominal Pain,0,0,0,0
+694,2025-01-11 09:35,69,Female,Orthopaedics,routine,Fracture,0,0,0,0
+695,2025-01-11 09:42,60,Other,Cardiology,emergency,Hypertension,0,0,0,0
+696,2025-01-11 09:45,85,Other,Neurology,urgent,Hypertension,0,0,0,0
+697,2025-01-11 10:02,62,Male,Orthopaedics,urgent,Chest Pain,0,0,0,0
+698,2025-01-11 10:03,49,Other,Orthopaedics,urgent,Stroke Symptoms,22,22,0,0.0
+699,2025-01-11 10:09,32,Female,Orthopaedics,routine,Back Pain,28,51,-23,-82.1
+700,2025-01-11 10:09,84,Male,Orthopaedics,urgent,Dizziness,51,28,23,45.1
+701,2025-01-11 11:03,75,Other,Neurology,routine,Abdominal Pain,0,0,0,0
+702,2025-01-11 11:08,83,Female,Neurology,urgent,Hypertension,0,0,0,0
+703,2025-01-11 11:09,18,Other,Cardiology,emergency,Fracture,0,0,0,0
+704,2025-01-11 11:16,72,Other,Cardiology,routine,Hypertension,0,0,0,0
+705,2025-01-11 11:17,73,Other,Cardiology,routine,Abdominal Pain,12,12,0,0.0
+706,2025-01-11 11:18,76,Male,Cardiology,routine,Fracture,48,61,-13,-27.1
+707,2025-01-11 11:41,24,Male,Cardiology,routine,Headache,38,60,-22,-57.9
+708,2025-01-11 11:46,47,Male,Neurology,urgent,Abdominal Pain,0,0,0,0
+709,2025-01-11 11:52,69,Female,Neurology,routine,Fever,1,1,0,0.0
+710,2025-01-11 11:56,33,Other,Cardiology,urgent,Fever,60,10,50,83.3
+711,2025-01-11 12:06,23,Male,Orthopaedics,routine,Stroke Symptoms,0,0,0,0
+712,2025-01-11 12:09,31,Other,Cardiology,routine,Back Pain,60,82,-22,-36.7
+713,2025-01-11 12:17,29,Other,Orthopaedics,urgent,Dizziness,0,0,0,0
+714,2025-01-11 12:18,21,Female,Neurology,urgent,Fever,3,3,0,0.0
+715,2025-01-11 12:37,68,Male,Orthopaedics,urgent,Hypertension,15,15,0,0.0
+716,2025-01-11 12:40,36,Other,Orthopaedics,routine,Dizziness,16,121,-105,-656.2
+717,2025-01-11 12:43,36,Male,Orthopaedics,urgent,Back Pain,44,13,31,70.5
+718,2025-01-11 12:49,68,Other,Cardiology,emergency,Stroke Symptoms,42,20,22,52.4
+719,2025-01-11 12:51,62,Male,Cardiology,routine,Dizziness,60,93,-33,-55.0
+720,2025-01-11 12:59,38,Male,Orthopaedics,urgent,Abdominal Pain,47,28,19,40.4
+721,2025-01-11 13:01,32,Male,Orthopaedics,urgent,Dizziness,61,30,31,50.8
+722,2025-01-11 13:03,77,Other,Orthopaedics,urgent,Chest Pain,78,59,19,24.4
+723,2025-01-11 13:09,26,Other,Cardiology,routine,Dizziness,50,107,-57,-114.0
+724,2025-01-11 13:13,60,Female,Cardiology,urgent,Stroke Symptoms,88,16,72,81.8
+725,2025-01-11 13:13,54,Male,Orthopaedics,urgent,Hypertension,84,53,31,36.9
+726,2025-01-11 13:23,75,Female,Cardiology,routine,Back Pain,86,111,-25,-29.1
+727,2025-01-11 13:38,37,Other,Orthopaedics,urgent,Dizziness,78,59,19,24.4
+728,2025-01-11 13:48,39,Female,Neurology,routine,Back Pain,0,0,0,0
+729,2025-01-11 13:52,73,Other,Cardiology,emergency,Hypertension,84,12,72,85.7
+730,2025-01-11 14:00,60,Other,Neurology,urgent,Fracture,0,0,0,0
+731,2025-01-11 14:09,57,Female,Neurology,routine,Shortness of Breath,26,26,0,0.0
+732,2025-01-11 14:17,28,Other,Cardiology,urgent,Fracture,79,4,75,94.9
+733,2025-01-11 14:54,51,Male,Cardiology,routine,Abdominal Pain,45,52,-7,-15.6
+734,2025-01-11 15:15,27,Other,Orthopaedics,routine,Headache,0,0,0,0
+735,2025-01-11 15:31,69,Other,Orthopaedics,routine,Chest Pain,0,0,0,0
+736,2025-01-11 15:38,51,Other,Cardiology,routine,Chest Pain,33,61,-28,-84.8
+737,2025-01-11 15:44,37,Other,Orthopaedics,routine,Shortness of Breath,21,37,-16,-76.2
+738,2025-01-11 16:00,55,Other,Cardiology,urgent,Stroke Symptoms,29,4,25,86.2
+739,2025-01-11 16:04,68,Male,Orthopaedics,emergency,Abdominal Pain,17,1,16,94.1
+740,2025-01-11 16:07,39,Other,Cardiology,urgent,Hypertension,54,29,25,46.3
+741,2025-01-11 16:10,40,Male,Cardiology,routine,Shortness of Breath,54,61,-7,-13.0
+742,2025-01-11 16:15,79,Other,Orthopaedics,routine,Fracture,26,10,16,61.5
+743,2025-01-11 16:22,47,Female,Cardiology,routine,Hypertension,74,67,7,9.5
+744,2025-01-11 16:22,44,Male,Neurology,emergency,Hypertension,0,0,0,0
+745,2025-01-11 16:57,76,Female,Neurology,routine,Fever,0,0,0,0
+746,2025-01-11 17:03,84,Male,Cardiology,routine,Back Pain,51,58,-7,-13.7
+747,2025-01-11 17:06,40,Other,Neurology,routine,Dizziness,0,0,0,0
+748,2025-01-11 17:08,27,Other,Neurology,urgent,Back Pain,39,39,0,0.0
+749,2025-01-11 17:23,69,Other,Neurology,routine,Hypertension,33,68,-35,-106.1
+750,2025-01-11 17:26,18,Female,Neurology,urgent,Shortness of Breath,56,30,26,46.4
+751,2025-01-11 17:26,47,Male,Cardiology,routine,Shortness of Breath,60,53,7,11.7
+752,2025-01-11 17:28,37,Male,Orthopaedics,emergency,Dizziness,0,0,0,0
+753,2025-01-11 17:47,33,Other,Neurology,urgent,Stroke Symptoms,59,35,24,40.7
+754,2025-01-11 17:55,32,Other,Neurology,routine,Back Pain,62,62,0,0.0
+755,2025-01-12 08:02,38,Male,Neurology,urgent,Shortness of Breath,0,0,0,0
+756,2025-01-12 08:33,23,Male,Neurology,routine,Chest Pain,0,0,0,0
+757,2025-01-12 08:54,83,Male,Orthopaedics,emergency,Fracture,0,0,0,0
+758,2025-01-12 09:01,39,Male,Orthopaedics,emergency,Fracture,0,0,0,0
+759,2025-01-12 09:01,20,Female,Cardiology,urgent,Abdominal Pain,0,0,0,0
+760,2025-01-12 09:06,45,Male,Orthopaedics,routine,Dizziness,8,8,0,0.0
+761,2025-01-12 09:12,46,Male,Neurology,urgent,Shortness of Breath,0,0,0,0
+762,2025-01-12 09:13,41,Other,Orthopaedics,routine,Fracture,8,8,0,0.0
+763,2025-01-12 09:15,61,Male,Orthopaedics,routine,Dizziness,49,56,-7,-14.3
+764,2025-01-12 09:16,47,Male,Orthopaedics,routine,Stroke Symptoms,55,140,-85,-154.5
+765,2025-01-12 09:23,43,Male,Cardiology,urgent,Headache,0,0,0,0
+766,2025-01-12 09:27,30,Male,Orthopaedics,routine,Fever,87,162,-75,-86.2
+767,2025-01-12 09:41,82,Male,Orthopaedics,urgent,Stroke Symptoms,80,23,57,71.2
+768,2025-01-12 09:56,34,Other,Cardiology,routine,Shortness of Breath,0,0,0,0
+769,2025-01-12 09:57,73,Other,Orthopaedics,routine,Chest Pain,99,149,-50,-50.5
+770,2025-01-12 10:01,85,Other,Neurology,routine,Chest Pain,0,0,0,0
+771,2025-01-12 10:07,30,Female,Neurology,urgent,Fever,0,0,0,0
+772,2025-01-12 10:25,28,Male,Neurology,urgent,Shortness of Breath,17,17,0,0.0
+773,2025-01-12 10:32,42,Female,Orthopaedics,urgent,Fever,72,27,45,62.5
+774,2025-01-12 10:32,84,Other,Orthopaedics,emergency,Chest Pain,107,7,100,93.5
+775,2025-01-12 10:35,44,Other,Cardiology,emergency,Fever,0,0,0,0
+776,2025-01-12 10:40,31,Female,Neurology,routine,Fever,11,11,0,0.0
+777,2025-01-12 10:40,51,Female,Orthopaedics,urgent,Stroke Symptoms,106,21,85,80.2
+778,2025-01-12 10:49,53,Female,Neurology,routine,Stroke Symptoms,28,28,0,0.0
+779,2025-01-12 10:57,79,Female,Neurology,routine,Hypertension,44,44,0,0.0
+780,2025-01-12 11:22,50,Female,Orthopaedics,urgent,Abdominal Pain,77,12,65,84.4
+781,2025-01-12 11:32,68,Other,Orthopaedics,routine,Back Pain,89,174,-85,-95.5
+782,2025-01-12 11:36,47,Other,Orthopaedics,routine,Headache,98,173,-75,-76.5
+783,2025-01-12 11:50,45,Male,Orthopaedics,urgent,Fracture,121,86,35,28.9
+784,2025-01-12 11:51,24,Other,Neurology,routine,Abdominal Pain,16,40,-24,-150.0
+785,2025-01-12 11:57,36,Male,Orthopaedics,urgent,Chest Pain,127,82,45,35.4
+786,2025-01-12 11:59,26,Male,Orthopaedics,urgent,Fever,147,112,35,23.8
+787,2025-01-12 12:05,22,Other,Neurology,urgent,Headache,26,2,24,92.3
+788,2025-01-12 12:14,84,Other,Neurology,routine,Stroke Symptoms,43,28,15,34.9
+789,2025-01-12 12:30,81,Male,Orthopaedics,urgent,Chest Pain,129,84,45,34.9
+790,2025-01-12 12:30,42,Female,Cardiology,urgent,Abdominal Pain,0,0,0,0
+791,2025-01-12 12:32,47,Other,Orthopaedics,emergency,Abdominal Pain,149,27,122,81.9
+792,2025-01-12 12:38,48,Female,Orthopaedics,routine,Chest Pain,156,158,-2,-1.3
+793,2025-01-12 12:49,69,Female,Cardiology,routine,Headache,0,0,0,0
+794,2025-01-12 12:55,43,Other,Neurology,urgent,Fever,11,26,-15,-136.4
+795,2025-01-12 12:55,54,Male,Orthopaedics,routine,Headache,146,179,-33,-22.6
+796,2025-01-12 12:58,62,Female,Orthopaedics,routine,Stroke Symptoms,186,188,-2,-1.1
+797,2025-01-12 13:04,42,Other,Neurology,routine,Hypertension,37,52,-15,-40.5
+798,2025-01-12 13:11,51,Male,Neurology,urgent,Stroke Symptoms,36,21,15,41.7
+799,2025-01-12 13:11,27,Other,Orthopaedics,urgent,Headache,180,128,52,28.9
+800,2025-01-12 13:12,50,Other,Neurology,routine,Headache,70,55,15,21.4
+801,2025-01-12 13:14,74,Other,Orthopaedics,routine,Dizziness,212,210,2,0.9
+802,2025-01-12 14:29,61,Male,Orthopaedics,routine,Shortness of Breath,145,167,-22,-15.2
+803,2025-01-12 14:50,21,Other,Neurology,routine,Shortness of Breath,0,0,0,0
+804,2025-01-12 14:52,46,Female,Neurology,urgent,Headache,20,5,15,75.0
+805,2025-01-12 14:58,63,Female,Cardiology,routine,Back Pain,0,0,0,0
+806,2025-01-12 15:06,54,Male,Cardiology,routine,Dizziness,0,0,0,0
+807,2025-01-12 15:15,40,Male,Orthopaedics,emergency,Back Pain,141,101,40,28.4
+808,2025-01-12 15:19,52,Other,Neurology,urgent,Hypertension,21,13,8,38.1
+809,2025-01-12 15:29,43,Female,Orthopaedics,urgent,Hypertension,135,125,10,7.4
+810,2025-01-12 15:33,47,Male,Cardiology,urgent,Dizziness,15,15,0,0.0
+811,2025-01-12 15:41,37,Female,Cardiology,urgent,Stroke Symptoms,15,15,0,0.0
+812,2025-01-12 15:41,81,Other,Cardiology,routine,Headache,42,42,0,0.0
+813,2025-01-12 15:44,65,Female,Orthopaedics,routine,Chest Pain,132,162,-30,-22.7
+814,2025-01-12 15:59,80,Female,Neurology,routine,Stroke Symptoms,0,0,0,0
+815,2025-01-12 16:01,46,Female,Orthopaedics,urgent,Dizziness,138,128,10,7.2
+816,2025-01-12 16:09,72,Other,Cardiology,routine,Chest Pain,22,22,0,0.0
+817,2025-01-12 16:23,62,Other,Orthopaedics,urgent,Chest Pain,143,141,2,1.4
+818,2025-01-12 16:25,33,Female,Orthopaedics,urgent,Fracture,149,171,-22,-14.8
+819,2025-01-12 16:32,19,Other,Neurology,routine,Back Pain,0,0,0,0
+820,2025-01-12 16:55,30,Other,Cardiology,emergency,Fever,18,18,0,0.0
+821,2025-01-12 17:12,51,Male,Orthopaedics,urgent,Dizziness,129,127,2,1.6
+822,2025-01-12 17:17,64,Female,Neurology,urgent,Stroke Symptoms,0,0,0,0
+823,2025-01-12 17:25,65,Female,Neurology,urgent,Hypertension,0,0,0,0
+824,2025-01-12 17:31,41,Female,Neurology,urgent,Dizziness,21,21,0,0.0
+825,2025-01-12 17:36,52,Male,Orthopaedics,routine,Hypertension,113,135,-22,-19.5
+826,2025-01-12 17:42,43,Female,Orthopaedics,routine,Fever,134,132,2,1.5
+827,2025-01-12 17:42,19,Female,Orthopaedics,emergency,Fracture,157,24,133,84.7
+828,2025-01-12 17:50,84,Other,Neurology,urgent,Fracture,10,10,0,0.0
+829,2025-01-13 08:01,50,Female,Neurology,routine,Shortness of Breath,0,0,0,0
+830,2025-01-13 08:21,30,Female,Orthopaedics,routine,Chest Pain,0,0,0,0
+831,2025-01-13 08:26,78,Female,Cardiology,routine,Hypertension,0,0,0,0
+832,2025-01-13 08:37,60,Other,Cardiology,routine,Shortness of Breath,0,0,0,0
+833,2025-01-13 08:41,50,Other,Neurology,urgent,Abdominal Pain,0,0,0,0
+834,2025-01-13 08:52,43,Female,Neurology,urgent,Headache,0,0,0,0
+835,2025-01-13 08:55,54,Male,Orthopaedics,routine,Abdominal Pain,0,0,0,0
+836,2025-01-13 09:30,75,Female,Orthopaedics,urgent,Abdominal Pain,0,0,0,0
+837,2025-01-13 09:33,77,Female,Neurology,routine,Stroke Symptoms,0,0,0,0
+838,2025-01-13 09:33,61,Other,Cardiology,routine,Fracture,0,0,0,0
+839,2025-01-13 09:47,27,Female,Orthopaedics,urgent,Stroke Symptoms,0,0,0,0
+840,2025-01-13 09:58,58,Female,Neurology,emergency,Hypertension,0,0,0,0
+841,2025-01-13 10:44,68,Other,Orthopaedics,routine,Dizziness,0,0,0,0
+842,2025-01-13 10:59,84,Other,Neurology,urgent,Back Pain,0,0,0,0
+843,2025-01-13 11:05,20,Male,Neurology,routine,Fracture,0,0,0,0
+844,2025-01-13 11:12,28,Other,Cardiology,emergency,Dizziness,0,0,0,0
+845,2025-01-13 11:28,26,Male,Neurology,urgent,Headache,6,6,0,0.0
+846,2025-01-13 11:54,21,Male,Neurology,routine,Abdominal Pain,1,1,0,0.0
+847,2025-01-13 12:16,51,Male,Orthopaedics,routine,Headache,0,0,0,0
+848,2025-01-13 12:18,47,Female,Cardiology,routine,Fever,0,0,0,0
+849,2025-01-13 12:33,34,Other,Neurology,urgent,Shortness of Breath,0,0,0,0
+850,2025-01-13 12:35,63,Male,Cardiology,emergency,Chest Pain,0,0,0,0
+851,2025-01-13 12:44,52,Female,Neurology,routine,Shortness of Breath,1,1,0,0.0
+852,2025-01-13 12:55,76,Male,Cardiology,routine,Abdominal Pain,0,0,0,0
+853,2025-01-13 13:22,85,Female,Orthopaedics,routine,Stroke Symptoms,0,0,0,0
+854,2025-01-13 13:28,79,Female,Orthopaedics,routine,Dizziness,0,0,0,0
+855,2025-01-13 13:30,64,Female,Cardiology,routine,Shortness of Breath,0,0,0,0
+856,2025-01-13 13:31,18,Male,Cardiology,urgent,Dizziness,14,14,0,0.0
+857,2025-01-13 13:37,78,Female,Cardiology,routine,Back Pain,43,43,0,0.0
+858,2025-01-13 13:41,56,Female,Orthopaedics,routine,Shortness of Breath,31,31,0,0.0
+859,2025-01-13 13:56,47,Other,Neurology,emergency,Dizziness,0,0,0,0
+860,2025-01-13 14:10,70,Male,Orthopaedics,routine,Back Pain,8,8,0,0.0
+861,2025-01-13 14:50,38,Male,Neurology,routine,Fever,0,0,0,0
+862,2025-01-13 14:53,46,Female,Orthopaedics,routine,Fever,9,15,-6,-66.7
+863,2025-01-13 14:58,52,Other,Neurology,urgent,Hypertension,0,0,0,0
+864,2025-01-13 15:01,70,Female,Orthopaedics,urgent,Abdominal Pain,7,1,6,85.7
+865,2025-01-13 15:03,55,Male,Cardiology,urgent,Fracture,0,0,0,0
+866,2025-01-13 15:22,52,Female,Neurology,emergency,Stroke Symptoms,11,11,0,0.0
+867,2025-01-13 15:26,20,Female,Neurology,routine,Hypertension,14,14,0,0.0
+868,2025-01-13 15:32,31,Male,Orthopaedics,urgent,Chest Pain,11,5,6,54.5
+869,2025-01-13 15:32,19,Other,Cardiology,urgent,Shortness of Breath,0,0,0,0
+870,2025-01-13 15:45,45,Female,Cardiology,urgent,Chest Pain,0,0,0,0
+871,2025-01-13 15:53,77,Female,Neurology,urgent,Shortness of Breath,0,0,0,0
+872,2025-01-13 16:01,36,Male,Cardiology,routine,Back Pain,6,6,0,0.0
+873,2025-01-13 16:01,78,Other,Neurology,emergency,Headache,27,27,0,0.0
+874,2025-01-13 16:23,33,Male,Neurology,urgent,Fever,7,7,0,0.0
+875,2025-01-13 16:27,74,Female,Orthopaedics,routine,Hypertension,0,0,0,0
+876,2025-01-13 16:30,30,Female,Cardiology,urgent,Hypertension,0,0,0,0
+877,2025-01-13 16:46,57,Female,Cardiology,routine,Shortness of Breath,11,11,0,0.0
+878,2025-01-13 16:50,84,Other,Cardiology,routine,Chest Pain,15,15,0,0.0
+879,2025-01-13 16:51,64,Male,Neurology,emergency,Dizziness,0,0,0,0
+880,2025-01-13 17:15,48,Male,Orthopaedics,routine,Hypertension,0,0,0,0
+881,2025-01-13 17:23,53,Male,Neurology,routine,Chest Pain,0,0,0,0
+882,2025-01-13 17:49,23,Male,Neurology,routine,Hypertension,0,0,0,0
+883,2025-01-13 17:50,37,Other,Orthopaedics,routine,Shortness of Breath,0,0,0,0
+884,2025-01-13 17:59,81,Male,Cardiology,urgent,Hypertension,0,0,0,0
+885,2025-01-14 08:02,25,Other,Orthopaedics,emergency,Back Pain,0,0,0,0
+886,2025-01-14 08:14,31,Other,Orthopaedics,emergency,Fracture,0,0,0,0
+887,2025-01-14 08:29,62,Other,Cardiology,emergency,Back Pain,0,0,0,0
+888,2025-01-14 08:44,66,Male,Neurology,routine,Hypertension,0,0,0,0
+889,2025-01-14 09:11,80,Male,Cardiology,urgent,Dizziness,0,0,0,0
+890,2025-01-14 09:35,80,Other,Orthopaedics,routine,Dizziness,0,0,0,0
+891,2025-01-14 09:56,59,Female,Cardiology,urgent,Abdominal Pain,0,0,0,0
+892,2025-01-14 10:00,38,Other,Neurology,routine,Stroke Symptoms,0,0,0,0
+893,2025-01-14 10:04,51,Female,Cardiology,emergency,Shortness of Breath,0,0,0,0
+894,2025-01-14 10:14,82,Other,Neurology,routine,Chest Pain,0,0,0,0
+895,2025-01-14 10:19,64,Other,Cardiology,urgent,Chest Pain,5,5,0,0.0
+896,2025-01-14 10:28,26,Other,Cardiology,routine,Back Pain,3,3,0,0.0
+897,2025-01-14 10:32,85,Male,Orthopaedics,routine,Fever,0,0,0,0
+898,2025-01-14 10:35,54,Other,Orthopaedics,routine,Fracture,0,0,0,0
+899,2025-01-14 10:37,30,Male,Orthopaedics,urgent,Back Pain,45,48,-3,-6.7
+900,2025-01-14 10:42,40,Male,Cardiology,routine,Chest Pain,17,17,0,0.0
+901,2025-01-14 11:13,42,Female,Cardiology,routine,Headache,8,8,0,0.0
+902,2025-01-14 11:15,80,Other,Orthopaedics,emergency,Fever,10,7,3,30.0
+903,2025-01-14 11:50,24,Female,Orthopaedics,routine,Stroke Symptoms,0,0,0,0
+904,2025-01-14 11:59,44,Male,Orthopaedics,urgent,Headache,0,1,-1,0
+905,2025-01-14 12:04,25,Other,Cardiology,routine,Shortness of Breath,0,0,0,0
+906,2025-01-14 12:05,25,Female,Orthopaedics,urgent,Fever,29,30,-1,-3.4
+907,2025-01-14 12:09,27,Male,Neurology,routine,Abdominal Pain,0,0,0,0
+908,2025-01-14 12:33,30,Other,Cardiology,routine,Hypertension,0,0,0,0
+909,2025-01-14 12:39,42,Female,Cardiology,emergency,Abdominal Pain,15,15,0,0.0
+910,2025-01-14 12:42,40,Other,Orthopaedics,urgent,Hypertension,0,0,0,0
+911,2025-01-14 12:49,31,Other,Orthopaedics,routine,Fever,20,21,-1,-5.0
+912,2025-01-14 12:54,76,Other,Orthopaedics,routine,Back Pain,23,23,0,0.0
+913,2025-01-14 12:58,41,Male,Neurology,routine,Headache,0,0,0,0
+914,2025-01-14 13:05,38,Other,Orthopaedics,routine,Back Pain,54,62,-8,-14.8
+915,2025-01-14 13:18,58,Female,Orthopaedics,routine,Shortness of Breath,49,99,-50,-102.0
+916,2025-01-14 13:25,73,Female,Neurology,routine,Back Pain,0,0,0,0
+917,2025-01-14 13:29,45,Male,Neurology,routine,Stroke Symptoms,19,46,-27,-142.1
+918,2025-01-14 13:40,75,Female,Orthopaedics,urgent,Dizziness,69,20,49,71.0
+919,2025-01-14 13:48,22,Other,Neurology,urgent,Chest Pain,27,0,27,100.0
+920,2025-01-14 13:53,35,Other,Orthopaedics,routine,Chest Pain,64,114,-50,-78.1
+921,2025-01-14 14:26,46,Female,Neurology,routine,Chest Pain,12,0,12,100.0
+922,2025-01-14 14:30,53,Other,Neurology,urgent,Chest Pain,20,46,-26,-130.0
+923,2025-01-14 14:32,37,Other,Orthopaedics,routine,Abdominal Pain,52,128,-76,-146.2
+924,2025-01-14 14:32,35,Male,Neurology,emergency,Back Pain,53,33,20,37.7
+925,2025-01-14 14:35,50,Male,Orthopaedics,urgent,Hypertension,72,0,72,100.0
+926,2025-01-14 14:57,45,Female,Cardiology,routine,Stroke Symptoms,0,0,0,0
+927,2025-01-14 15:00,40,Female,Orthopaedics,routine,Back Pain,74,132,-58,-78.4
+928,2025-01-14 15:04,56,Male,Orthopaedics,urgent,Stroke Symptoms,78,26,52,66.7
+929,2025-01-14 15:05,25,Male,Orthopaedics,emergency,Fever,112,5,107,95.5
+930,2025-01-14 15:28,71,Female,Neurology,routine,Back Pain,0,0,0,0
+931,2025-01-14 15:37,19,Other,Cardiology,routine,Hypertension,0,0,0,0
+932,2025-01-14 15:46,57,Male,Orthopaedics,routine,Fever,78,136,-58,-74.4
+933,2025-01-14 15:47,37,Other,Neurology,routine,Abdominal Pain,0,4,-4,0
+934,2025-01-14 15:52,24,Male,Orthopaedics,urgent,Hypertension,85,13,72,84.7
+935,2025-01-14 16:03,82,Other,Neurology,routine,Shortness of Breath,15,58,-43,-286.7
+936,2025-01-14 16:04,36,Female,Neurology,emergency,Dizziness,33,14,19,57.6
+937,2025-01-14 16:14,24,Other,Cardiology,emergency,Shortness of Breath,0,0,0,0
+938,2025-01-14 16:15,82,Female,Neurology,routine,Headache,42,78,-36,-85.7
+939,2025-01-14 16:16,79,Male,Orthopaedics,urgent,Fracture,96,21,75,78.1
+940,2025-01-14 16:21,43,Other,Neurology,routine,Fever,47,90,-43,-91.5
+941,2025-01-14 16:27,49,Male,Orthopaedics,routine,Abdominal Pain,87,98,-11,-12.6
+942,2025-01-14 16:30,29,Other,Neurology,emergency,Back Pain,77,8,69,89.6
+943,2025-01-14 16:39,62,Female,Neurology,emergency,Fever,79,2,77,97.5
+944,2025-01-14 16:40,21,Other,Neurology,urgent,Stroke Symptoms,87,18,69,79.3
+945,2025-01-14 16:41,74,Other,Cardiology,routine,Back Pain,0,0,0,0
+946,2025-01-14 17:11,43,Male,Neurology,routine,Chest Pain,67,72,-5,-7.5
+947,2025-01-14 17:16,24,Male,Cardiology,routine,Headache,0,0,0,0
+948,2025-01-14 17:22,19,Female,Orthopaedics,urgent,Fracture,65,8,57,87.7
+949,2025-01-14 17:24,78,Female,Cardiology,urgent,Dizziness,7,42,-35,-500.0
+950,2025-01-14 17:24,44,Male,Cardiology,emergency,Abdominal Pain,42,7,35,83.3
+951,2025-01-14 17:25,36,Female,Neurology,routine,Abdominal Pain,77,76,1,1.3
+952,2025-01-14 17:25,85,Female,Orthopaedics,routine,Chest Pain,79,87,-8,-10.1
+953,2025-01-14 17:45,43,Female,Cardiology,emergency,Chest Pain,21,6,15,71.4
+954,2025-01-14 17:53,77,Male,Orthopaedics,routine,Dizziness,69,62,7,10.1
+955,2025-01-15 08:15,52,Female,Cardiology,routine,Headache,0,0,0,0
+956,2025-01-15 08:29,20,Male,Orthopaedics,routine,Back Pain,0,0,0,0
+957,2025-01-15 08:36,66,Male,Orthopaedics,urgent,Fever,0,0,0,0
+958,2025-01-15 08:47,80,Female,Orthopaedics,routine,Headache,24,24,0,0.0
+959,2025-01-15 08:57,43,Male,Orthopaedics,routine,Headache,22,42,-20,-90.9
+960,2025-01-15 09:10,20,Other,Neurology,routine,Abdominal Pain,0,0,0,0
+961,2025-01-15 09:16,80,Female,Orthopaedics,emergency,Dizziness,45,3,42,93.3
+962,2025-01-15 09:22,63,Female,Cardiology,urgent,Chest Pain,0,0,0,0
+963,2025-01-15 09:32,53,Other,Neurology,urgent,Hypertension,0,0,0,0
+964,2025-01-15 09:40,21,Female,Orthopaedics,routine,Dizziness,29,21,8,27.6
+965,2025-01-15 09:42,61,Male,Neurology,routine,Hypertension,18,18,0,0.0
+966,2025-01-15 09:42,66,Male,Orthopaedics,routine,Fracture,39,69,-30,-76.9
+967,2025-01-15 09:42,47,Other,Orthopaedics,routine,Stroke Symptoms,77,82,-5,-6.5
+968,2025-01-15 10:27,57,Female,Orthopaedics,urgent,Fracture,44,2,42,95.5
+969,2025-01-15 10:29,34,Other,Neurology,routine,Shortness of Breath,0,0,0,0
+970,2025-01-15 10:38,43,Other,Cardiology,urgent,Stroke Symptoms,0,0,0,0
+971,2025-01-15 10:50,73,Male,Neurology,routine,Abdominal Pain,0,0,0,0
+972,2025-01-15 11:52,58,Male,Cardiology,routine,Stroke Symptoms,0,0,0,0
+973,2025-01-15 12:00,58,Male,Orthopaedics,emergency,Headache,0,0,0,0
+974,2025-01-15 12:10,70,Female,Cardiology,routine,Chest Pain,0,0,0,0
+975,2025-01-15 12:31,53,Other,Neurology,routine,Shortness of Breath,0,0,0,0
+976,2025-01-15 12:54,41,Male,Cardiology,urgent,Headache,0,0,0,0
+977,2025-01-15 13:00,47,Female,Orthopaedics,emergency,Stroke Symptoms,0,0,0,0
+978,2025-01-15 13:06,28,Female,Cardiology,routine,Chest Pain,0,0,0,0
+979,2025-01-15 13:24,78,Other,Neurology,routine,Fracture,0,0,0,0
+980,2025-01-15 13:32,80,Female,Neurology,routine,Fracture,0,0,0,0
+981,2025-01-15 13:36,22,Male,Cardiology,urgent,Hypertension,0,0,0,0
+982,2025-01-15 13:39,46,Female,Cardiology,urgent,Dizziness,17,17,0,0.0
+983,2025-01-15 13:46,40,Male,Cardiology,routine,Hypertension,25,25,0,0.0
+984,2025-01-15 14:07,59,Female,Neurology,routine,Stroke Symptoms,7,7,0,0.0
+985,2025-01-15 14:23,23,Female,Cardiology,routine,Fever,8,8,0,0.0
+986,2025-01-15 14:29,85,Female,Neurology,routine,Back Pain,0,0,0,0
+987,2025-01-15 14:47,31,Other,Orthopaedics,routine,Chest Pain,0,0,0,0
+988,2025-01-15 14:59,68,Other,Cardiology,urgent,Hypertension,2,2,0,0.0
+989,2025-01-15 15:01,84,Female,Cardiology,routine,Abdominal Pain,20,20,0,0.0
+990,2025-01-15 15:21,74,Female,Cardiology,routine,Hypertension,15,15,0,0.0
+991,2025-01-15 15:24,39,Female,Neurology,urgent,Dizziness,0,0,0,0
+992,2025-01-15 15:30,84,Other,Orthopaedics,urgent,Chest Pain,0,0,0,0
+993,2025-01-15 15:34,82,Male,Neurology,routine,Shortness of Breath,0,0,0,0
+994,2025-01-15 15:47,68,Male,Orthopaedics,emergency,Abdominal Pain,0,0,0,0
+995,2025-01-15 16:00,76,Male,Neurology,urgent,Chest Pain,0,0,0,0
+996,2025-01-15 16:19,29,Female,Orthopaedics,routine,Hypertension,0,0,0,0
+997,2025-01-15 16:58,33,Other,Orthopaedics,urgent,Fracture,0,0,0,0
+998,2025-01-15 17:03,64,Other,Orthopaedics,emergency,Shortness of Breath,6,6,0,0.0
+999,2025-01-15 17:06,83,Other,Orthopaedics,emergency,Fever,23,23,0,0.0
+1000,2025-01-15 17:14,66,Other,Cardiology,routine,Fever,0,0,0,0

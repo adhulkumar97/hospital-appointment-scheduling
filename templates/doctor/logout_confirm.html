@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm"
+     style="background: linear-gradient(135deg, #7b1e1e 0%, #c0392b 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-right-from-bracket me-2"></i>Logout Request</h1>
+            <p class="lead mb-0">Dr. {{ current_user.name }} — Please review before leaving</p>
+        </div>
+        <i class="fas fa-triangle-exclamation fa-4x opacity-50"></i>
+    </div>
+</div>
+
+{# ── Status: already stopped accepting new patients ── #}
+<div class="alert alert-info border-start border-info border-4 d-flex align-items-start gap-3 mb-4">
+    <i class="fas fa-circle-check fa-xl text-info mt-1"></i>
+    <div>
+        <strong>New patients will no longer be assigned to you.</strong><br>
+        Your availability has been paused — the system will route all new requests to other doctors in your department.
+    </div>
+</div>
+
+{% if pending_count > 0 %}
+{# ── Warning: pending patients remain ── #}
+<div class="alert alert-warning border-start border-warning border-5 d-flex align-items-start gap-3 mb-4 shadow-sm">
+    <i class="fas fa-users fa-2x text-warning mt-1"></i>
+    <div>
+        <strong class="fs-5">You still have {{ pending_count }} patient(s) waiting in your queue.</strong><br>
+        These patients are currently assigned to you and are expecting to be seen.
+        <ul class="mb-0 mt-2">
+            {% for entry in pending_entries %}
+            <li>
+                <strong>{{ entry.appointment_request.patient.user.name }}</strong>
+                — {{ entry.appointment_request.urgency_level }} urgency,
+                {{ entry.appointment_request.disease_category }}
+                {% if entry.priority_score == 999.0 %}
+                    <span class="badge bg-danger ms-1">⚠ Starvation Risk</span>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="mt-3 p-3 bg-white rounded border">
+            <strong>Recommended:</strong> Go back and complete their consultations first.<br>
+            <strong>If you must leave now:</strong> Click "Log Out Anyway" below — these patients will remain in the system
+            and an administrator can reassign them from the admin panel.
+        </div>
+    </div>
+</div>
+
+<div class="d-flex gap-3 flex-wrap">
+    <a href="{{ url_for('doctor_dashboard') }}" class="btn btn-success btn-lg">
+        <i class="fas fa-arrow-left me-2"></i>Go Back &amp; See Patients (Recommended)
+    </a>
+    <a href="{{ url_for('doctor_logout') }}"
+       class="btn btn-danger btn-lg"
+       onclick="return confirm('Are you absolutely sure?\n\n{{ pending_count }} patient(s) will be left without a consultation.\nAn admin will need to reassign them manually.');">
+        <i class="fas fa-right-from-bracket me-2"></i>Log Out Anyway ({{ pending_count }} patient(s) left)
+    </a>
+</div>
+
+{% else %}
+{# ── Queue is empty — safe to log out ── #}
+<div class="alert alert-success border-start border-success border-4 d-flex align-items-start gap-3 mb-4">
+    <i class="fas fa-circle-check fa-2x text-success mt-1"></i>
+    <div>
+        <strong class="fs-5">Your queue is empty — it's safe to log out.</strong><br>
+        All your patients have been seen. You can now close your session.
+    </div>
+</div>
+
+<div class="d-flex gap-3">
+    <a href="{{ url_for('doctor_logout') }}" class="btn btn-danger btn-lg">
+        <i class="fas fa-right-from-bracket me-2"></i>Confirm Logout
+    </a>
+    <a href="{{ url_for('doctor_dashboard') }}" class="btn btn-outline-secondary btn-lg">
+        <i class="fas fa-arrow-left me-2"></i>Cancel &amp; Stay
+    </a>
+</div>
+{% endif %}
+
+{% endblock %}

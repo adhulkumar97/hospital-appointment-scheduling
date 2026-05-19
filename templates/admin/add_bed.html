@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2><i class="fas fa-bed me-2"></i>Add Beds to Room {{ room.id }}</h2>
+        <p>Room Type: {{ room.room_type }} | Department: {{ room.department.name }}</p>
+        <form method="post">
+            <div class="mb-3">
+                <label for="number_of_beds" class="form-label">Number of beds to add</label>
+                <input type="number" name="number_of_beds" id="number_of_beds" class="form-control" min="1" max="100" value="1" required>
+                <div class="form-text">You can add multiple beds at once.</div>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle me-1"></i>Add Beds</button>
+            <a href="{{ url_for('list_rooms') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

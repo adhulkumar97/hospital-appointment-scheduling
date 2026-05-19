@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-flask me-2"></i>Simulation Results</h1>
+            <p class="lead mb-0">FCFS vs Fairness-Aware Priority Queue — 1,000 patients, 15 days</p>
+        </div>
+        <i class="fas fa-chart-bar fa-4x opacity-50"></i>
+    </div>
+</div>
+
+{% if results %}
+
+<!-- Simulation Parameters -->
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-white border-0 py-3">
+        <h5 class="mb-0"><i class="fas fa-cog me-2 text-primary"></i>Simulation Parameters</h5>
+    </div>
+    <div class="card-body">
+        {% set p = results.simulation_parameters %}
+        <div class="row">
+            <div class="col-md-3"><strong>Patients:</strong> {{ p.total_patients }}</div>
+            <div class="col-md-3"><strong>Duration:</strong> {{ p.simulation_days }} days</div>
+            <div class="col-md-3"><strong>Departments:</strong> {{ p.departments | join(', ') }}</div>
+            <div class="col-md-3"><strong>Doctors/dept:</strong> {{ p.doctors_per_dept }}</div>
+            <div class="col-md-3 mt-2"><strong>Urgency dist:</strong> Emergency 15%, Urgent 35%, Routine 50%</div>
+            <div class="col-md-3 mt-2"><strong>Weights:</strong> w₁={{ p.priority_weights.w1_urgency }}, w₂={{ p.priority_weights.w2_wait }}, w₃={{ p.priority_weights.w3_resource }}</div>
+            <div class="col-md-3 mt-2"><strong>Starvation threshold:</strong> {{ p.starvation_threshold_min }} min</div>
+            <div class="col-md-3 mt-2"><strong>Run:</strong> {{ results.run_timestamp }}</div>
+        </div>
+    </div>
+</div>
+
+<!-- Table 7: Performance -->
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-white border-0 py-3">
+        <h5 class="mb-0"><i class="fas fa-table me-2 text-primary"></i>Table 7 — Comparative Performance Results</h5>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Patient Group</th>
+                        <th>Metric</th>
+                        <th>FCFS Policy</th>
+                        <th>Fairness-Aware Policy</th>
+                        <th>Change (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for grp in ['emergency', 'urgent', 'routine'] %}
+                    {% set t = results.table7_performance[grp] %}
+                    <tr>
+                        <td rowspan="2" class="fw-bold text-capitalize">{{ grp }}</td>
+                        <td>Avg. Wait Time (min)</td>
+                        <td>{{ t.fcfs_avg_wait }}</td>
+                        <td>{{ t.fa_avg_wait }}</td>
+                        <td class="{{ 'text-success' if t.avg_wait_change < 0 else 'text-danger' }}">
+                            {{ t.avg_wait_change }}%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Max Wait Time (min)</td>
+                        <td>{{ t.fcfs_max_wait }}</td>
+                        <td>{{ t.fa_max_wait }}</td>
+                        <td class="{{ 'text-success' if t.max_wait_change < 0 else 'text-danger' }}">
+                            {{ t.max_wait_change }}%
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% set a = results.table7_performance.all %}
+                    <tr class="table-light fw-bold">
+                        <td rowspan="2">All Patients</td>
+                        <td>Avg. Wait Time (min)</td>
+                        <td>{{ a.fcfs_avg_wait }}</td>
+                        <td>{{ a.fa_avg_wait }}</td>
+                        <td class="{{ 'text-success' if a.avg_wait_change < 0 else 'text-danger' }}">
+                            {{ a.avg_wait_change }}%
+                        </td>
+                    </tr>
+                    <tr class="table-light fw-bold">
+                        <td>Doctor Utilisation (%)</td>
+                        <td>{{ a.fcfs_utilisation_pct }}%</td>
+                        <td>{{ a.fa_utilisation_pct }}%</td>
+                        <td class="{{ 'text-success' if a.utilisation_change > 0 else 'text-danger' }}">
+                            {{ a.utilisation_change }}%
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Table 8: Fairness -->
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-white border-0 py-3">
+        <h5 class="mb-0"><i class="fas fa-balance-scale me-2 text-primary"></i>Table 8 — Fairness Evaluation Metrics</h5>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Fairness Metric</th>
+                        <th>FCFS Policy</th>
+                        <th>Fairness-Aware Policy</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set t8 = results.table8_fairness %}
+                    <tr>
+                        <td>Wait time ratio: Emergency/Routine</td>
+                        <td>{{ t8.wait_ratio_emergency_routine.fcfs }}</td>
+                        <td>{{ t8.wait_ratio_emergency_routine.fa }}</td>
+                        <td><small>{{ t8.wait_ratio_emergency_routine.interpretation }}</small></td>
+                    </tr>
+                    <tr>
+                        <td>Gini coefficient of waiting times</td>
+                        <td>{{ t8.gini_coefficient.fcfs }}</td>
+                        <td>{{ t8.gini_coefficient.fa }}</td>
+                        <td><small>{{ t8.gini_coefficient.interpretation }}</small></td>
+                    </tr>
+                    <tr>
+                        <td>Starvation incidents (wait &gt; 150 min)</td>
+                        <td class="text-danger fw-bold">{{ t8.starvation_incidents.fcfs }}</td>
+                        <td class="text-success fw-bold">{{ t8.starvation_incidents.fa }}</td>
+                        <td><small>{{ t8.starvation_incidents.interpretation }}</small></td>
+                    </tr>
+                    <tr>
+                        <td>Audit log completeness</td>
+                        <td>{{ t8.audit_log_completeness.fcfs }}</td>
+                        <td><span class="badge bg-success">{{ t8.audit_log_completeness.fa }}</span></td>
+                        <td><small>{{ t8.audit_log_completeness.interpretation }}</small></td>
+                    </tr>
+                    <tr>
+                        <td>Fairness adjustment activations</td>
+                        <td>{{ t8.fairness_adjustment_activations.fcfs }}</td>
+                        <td class="text-primary fw-bold">{{ t8.fairness_adjustment_activations.fa }}</td>
+                        <td><small>{{ t8.fairness_adjustment_activations.interpretation }}</small></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="alert alert-warning">
+    <i class="fas fa-exclamation-triangle me-2"></i>
+    Simulation results not found. Run <code>python simulation/run_simulation.py</code> to generate them.
+</div>
+{% endif %}
+
+{% endblock %}

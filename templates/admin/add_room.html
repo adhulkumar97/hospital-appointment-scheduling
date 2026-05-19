@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-door-open me-2"></i>Add New Room</h1>
+            <p class="lead mb-0">Create a consultation or patient room with beds</p>
+        </div>
+        <i class="fas fa-hospital-user fa-4x opacity-50"></i>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white border-0 py-3">
+                <h4 class="mb-0"><i class="fas fa-notes-medical me-2 text-primary"></i>Room Configuration</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <select name="department_id" class="form-select" required>
+                            {% for dept in departments %}
+                                <option value="{{ dept.id }}">{{ dept.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Room Type</label>
+                        <select name="room_type" class="form-select" required>
+                            <option value="consultation">Consultation Room</option>
+                            <option value="patient">Patient Room</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Number of Beds</label>
+                        <input type="number" name="total_beds" class="form-control" min="1" required>
+                        <div class="form-text">Beds will be created automatically and marked as active.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2"><i class="fas fa-plus-circle me-2"></i>Add Room</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+    .card-header {
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .form-control, .form-select {
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+    .form-control:focus, .form-select:focus {
+        border-color: #2a5298;
+        box-shadow: 0 0 0 0.2rem rgba(42,82,152,0.25);
+    }
+    .btn-primary {
+        transition: all 0.2s;
+    }
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+</style>
+
+{% endblock %}

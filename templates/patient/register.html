@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-user-plus me-2"></i>Patient Registration</h1>
+            <p class="lead mb-0">Create your account for smart healthcare</p>
+        </div>
+        <i class="fas fa-hospital-user fa-4x opacity-50"></i>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white border-0 py-3">
+                <h4 class="mb-0"><i class="fas fa-notes-medical me-2 text-primary"></i>Personal Information</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Age</label>
+                            <input type="number" name="age" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Gender</label>
+                            <select name="gender" class="form-select" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Contact Number</label>
+                        <input type="text" name="contact" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2"><i class="fas fa-user-check me-2"></i>Register</button>
+                </form>
+                <hr class="my-4">
+                <p class="text-center mb-0">Already have an account? <a href="{{ url_for('patient_login') }}">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+    .card-header {
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .form-control, .form-select {
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+    .form-control:focus, .form-select:focus {
+        border-color: #2a5298;
+        box-shadow: 0 0 0 0.2rem rgba(42,82,152,0.25);
+    }
+    .btn-primary {
+        transition: all 0.2s;
+    }
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+</style>
+
+{% endblock %}

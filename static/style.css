@@ -1,0 +1,180 @@
+/* static/style.css */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --light-bg: #ecf0f1;
+  --dark-text: #2c3e50;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
+  padding-top: 70px;
+}
+
+.navbar {
+  background-color: var(--primary-color) !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255,0.9);
+  transition: all 0.3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  background-color: white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+}
+
+.table {
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.table thead th {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(52,152,219,0.05);
+}
+
+.badge {
+  padding: 0.5rem 0.8rem;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.alert {
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: var(--box-shadow);
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.jumbotron {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+.jumbotron .btn-light {
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  transition: all 0.3s;
+}
+
+.jumbotron .btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.form-control {
+  border-radius: var(--border-radius);
+  border: 1px solid #ced4da;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(52,152,219,0.25);
+}
+
+footer {
+  margin-top: 3rem;
+  border-top: 1px solid #dee2e6;
+  background-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .jumbotron {
+    padding: 2rem 1rem;
+  }
+  .table {
+    font-size: 0.9rem;
+  }
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Dashboard cards */
+.card.text-white {
+  border-radius: var(--border-radius);
+  transition: all 0.3s;
+}
+.card.text-white:hover {
+  transform: translateY(-5px);
+}

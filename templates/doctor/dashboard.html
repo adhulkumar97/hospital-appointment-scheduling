@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-chalkboard-user me-2"></i>Doctor Dashboard</h1>
+            <p class="lead mb-0">Welcome, Dr. {{ current_user.name }}</p>
+        </div>
+        <i class="fas fa-hospital-user fa-4x opacity-50"></i>
+    </div>
+</div>
+
+{# ── Graceful-logout warning banner ── #}
+{% if not doctor.is_available and doctor.is_logged_in %}
+<div class="alert alert-warning border-start border-warning border-4 d-flex align-items-start gap-3 mb-4 shadow-sm">
+    <i class="fas fa-clock-rotate-left fa-2x text-warning mt-1"></i>
+    <div>
+        <strong class="fs-5">You are pending logout.</strong><br>
+        You are <u>no longer accepting new patients</u>. However, you still have
+        <strong>{{ queue|length }} patient(s)</strong> in your queue who need to be seen.
+        Please complete their consultations before closing this session.
+        <br><small class="text-muted mt-1 d-block">Once your queue is empty you may log out, or use the button below to log out now and leave the remaining patients in the system for admin reassignment.</small>
+    </div>
+</div>
+{% endif %}
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-toggle-on me-2 text-primary"></i>Availability</h5>
+                {% if doctor.is_available %}
+                    <span class="badge bg-success fs-6">Active (Accepting Patients)</span>
+                {% else %}
+                    <span class="badge bg-warning text-dark fs-6"><i class="fas fa-ban me-1"></i>Not Accepting New Patients</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-users me-2 text-primary"></i>Current Queue</h5>
+                <h2 class="fw-bold">{{ doctor.current_queue_size }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-info-circle me-2 text-info"></i>Algorithm</h5>
+                <small class="text-muted">w₁=0.45·urgency + w₂=0.30·wait + w₃=0.15·resource + fairness_adj</small>
+                <div class="mt-1"><span class="badge bg-danger">Starvation override at &gt;150 min</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# ── Action buttons ── #}
+<div class="d-flex gap-2 mb-4 flex-wrap">
+    <form action="{{ url_for('toggle_availability') }}" method="post">
+        {% if doctor.is_available %}
+            <button type="submit" class="btn btn-outline-warning">
+                <i class="fas fa-pause-circle me-1"></i>Pause Availability
+            </button>
+        {% else %}
+            <button type="submit" class="btn btn-outline-success">
+                <i class="fas fa-play-circle me-1"></i>Resume Accepting Patients
+            </button>
+        {% endif %}
+    </form>
+
+    <a href="{{ url_for('doctor_request_logout') }}" class="btn btn-outline-danger"
+       onclick="return confirm('Are you sure you want to start the logout process?\n\nYou will stop receiving new patients immediately.\nYou must still complete consultations for any patients already in your queue.');">
+        <i class="fas fa-right-from-bracket me-1"></i>Log Out
+    </a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
+        <h3 class="mb-0"><i class="fas fa-list-ul me-2 text-primary"></i>Priority Queue (sorted by AI score)</h3>
+        <small class="text-muted">Higher score = served first</small>
+    </div>
+    <div class="card-body">
+        {% if queue %}
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Patient Name</th>
+                            <th>Disease</th>
+                            <th>Symptoms</th>
+                            <th>Urgency</th>
+                            <th>Wait (min)</th>
+                            <th>Priority Score</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entry in queue %}
+                        <tr class="{{ 'table-danger' if entry.starvation_risk else '' }}">
+                            <td>
+                                <span class="badge bg-{{ 'danger' if entry.position == 1 else 'secondary' }}">
+                                    {{ entry.position }}
+                                </span>
+                            </td>
+                            <td>
+                                <i class="fas fa-user me-1 text-secondary"></i>
+                                {{ entry.appointment_request.patient.user.name }}
+                                {% if entry.starvation_risk %}
+                                    <span class="badge bg-danger ms-1" title="Waiting too long — forced to front">
+                                        <i class="fas fa-exclamation-triangle"></i> URGENT
+                                    </span>
+                                {% endif %}
+                            </td>
+                            <td>{{ entry.appointment_request.disease_category }}</td>
+                            <td><small>{{ entry.appointment_request.symptoms[:60] }}{% if entry.appointment_request.symptoms|length > 60 %}…{% endif %}</small></td>
+                            <td>
+                                {% set u = entry.appointment_request.urgency_level.lower() %}
+                                {% if u in ['emergency', 'high'] %}
+                                    <span class="badge bg-danger">{{ entry.appointment_request.urgency_level }}</span>
+                                {% elif u in ['urgent', 'medium'] %}
+                                    <span class="badge bg-warning text-dark">{{ entry.appointment_request.urgency_level }}</span>
+                                {% else %}
+                                    <span class="badge bg-success">{{ entry.appointment_request.urgency_level }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <span class="{{ 'text-danger fw-bold' if entry.wait_minutes > 150 else '' }}">
+                                    {{ entry.wait_minutes }}
+                                </span>
+                            </td>
+                            <td>
+                                {% if entry.priority_score == 999.0 %}
+                                    <span class="badge bg-danger">999 ★</span>
+                                {% else %}
+                                    <span class="badge bg-primary">{{ "%.4f"|format(entry.priority_score) }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{{ url_for('consultation', request_id=entry.appointment_request.id) }}" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-stethoscope me-1"></i>Consult
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">No assigned patients at the moment.</div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+.bg-gradient-primary { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); }
+.table th, .table td { vertical-align: middle; }
+.badge { font-weight: 500; padding: 0.4rem 0.7rem; }
+</style>
+{% endblock %}

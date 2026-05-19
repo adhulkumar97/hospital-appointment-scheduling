@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Header -->
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-chalkboard-user me-2"></i>Admin Dashboard</h1>
+            <p class="lead mb-0">Welcome back, {{ current_user.name }}! Manage your hospital efficiently.</p>
+        </div>
+        <i class="fas fa-hospital-user fa-4x opacity-50"></i>
+    </div>
+</div>
+
+<!-- Active Patients section -->
+<div class="row g-4 mb-5">
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm h-100 hover-scale">
+            <div class="card-body text-center">
+                <div class="bg-primary bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                    <i class="fas fa-users fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title text-muted">Active Patients</h5>
+                <h2 class="fw-bold">{{ active_patients }}</h2>
+                <small class="text-muted">currently in queue</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm h-100 hover-scale">
+            <div class="card-body text-center">
+                <div class="bg-success bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                    <i class="fas fa-procedures fa-3x text-success"></i>
+                </div>
+                <h5 class="card-title text-muted">Active Admissions</h5>
+                <h2 class="fw-bold">{{ total_admissions }}</h2>
+                <small class="text-muted">hospitalized patients</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm h-100 hover-scale">
+            <div class="card-body text-center">
+                <div class="bg-info bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                    <i class="fas fa-user-md fa-3x text-info"></i>
+                </div>
+                <h5 class="card-title text-muted">Active Doctors</h5>
+                <h2 class="fw-bold">{{ active_doctors|length }}</h2>
+                <small class="text-muted">currently on duty</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm h-100 hover-scale">
+            <div class="card-body text-center">
+                <div class="bg-warning bg-opacity-10 rounded-circle p-3 d-inline-block mb-3">
+                    <i class="fas fa-building fa-3x text-warning"></i>
+                </div>
+                <h5 class="card-title text-muted">Departments</h5>
+                <h2 class="fw-bold">{{ departments|length }}</h2>
+                <small class="text-muted">specialized units</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Active Doctors Section -->
+<div class="card shadow-sm mb-5">
+    <div class="card-header bg-white border-0 py-3">
+        <h3 class="mb-0"><i class="fas fa-user-md me-2 text-primary"></i>Active Doctors</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                     <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Specialization</th>
+                        <th>Logged In</th>
+                        <th>Available</th>
+                        <th>Queue Size</th>
+                        <th>Actions</th>
+                    </thead>
+                <tbody>
+                    {% for doc in active_doctors %}
+                    <tr>
+                        <td>{{ doc.id }}</td>
+                        <td><i class="fas fa-user-circle me-2 text-secondary"></i>{{ doc.user.name }}</td>
+                        <td>{{ doc.department.name }}</td>
+                        <td>{{ doc.specialization }}</td>
+                        <td>{% if doc.is_logged_in %}<span class="badge bg-success">Yes</span>{% else %}<span class="badge bg-secondary">No</span>{% endif %}</td>
+                        <td>{% if doc.is_available %}<span class="badge bg-success">Yes</span>{% else %}<span class="badge bg-danger">No</span>{% endif %}</td>
+                        <td><span class="badge bg-info rounded-pill">{{ doc.current_queue_size }}</span></td>
+                        <td>
+                            <form action="{{ url_for('deactivate_doctor', doctor_id=doc.id) }}" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Deactivate this doctor? They will no longer receive new patients.')">
+                                    <i class="fas fa-user-slash me-1"></i>Deactivate
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Inactive Doctors Section -->
+{% if inactive_doctors %}
+<div class="card shadow-sm mb-5">
+    <div class="card-header bg-white border-0 py-3">
+        <h3 class="mb-0"><i class="fas fa-user-slash me-2 text-danger"></i>Inactive Doctors</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                     <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Specialization</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </thead>
+                <tbody>
+                    {% for doc in inactive_doctors %}
+                    <tr>
+                        <td>{{ doc.id }}</td>
+                        <td><i class="fas fa-user-circle me-2 text-secondary"></i>{{ doc.user.name }}</td>
+                        <td>{{ doc.department.name }}</td>
+                        <td>{{ doc.specialization }}</td>
+                        <td><span class="badge bg-secondary">Inactive</span></td>
+                        <td>
+                            <form action="{{ url_for('reactivate_doctor', doctor_id=doc.id) }}" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-sm btn-success" onclick="return confirm('Reactivate this doctor?')">
+                                    <i class="fas fa-user-check me-1"></i>Reactivate
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Monitoring (ONLY ADMIN CAN SEE ) -->
+<div class="row g-4 mb-5">
+    <div class="col-md-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white border-0 py-3">
+                <h3 class="mb-0"><i class="fas fa-chart-line me-2 text-primary"></i>System Monitoring</h3>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('list_patients') }}" class="btn btn-outline-primary btn-lg text-start"><i class="fas fa-users me-2"></i>All Patients</a>
+                    <a href="{{ url_for('list_appointments') }}" class="btn btn-outline-primary btn-lg text-start"><i class="fas fa-calendar-alt me-2"></i>All Appointments</a>
+                    <a href="{{ url_for('list_treatments') }}" class="btn btn-outline-primary btn-lg text-start"><i class="fas fa-prescription-bottle me-2"></i>All Treatments</a>
+                    <a href="{{ url_for('list_admissions') }}" class="btn btn-outline-primary btn-lg text-start"><i class="fas fa-procedures me-2"></i>All Admissions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white border-0 py-3">
+                <h3 class="mb-0"><i class="fas fa-bed me-2 text-primary"></i>Room & Bed Management</h3>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('add_room') }}" class="btn btn-outline-success btn-lg text-start"><i class="fas fa-plus-circle me-2"></i>Add Room</a>
+                    <a href="{{ url_for('list_rooms') }}" class="btn btn-outline-info btn-lg text-start"><i class="fas fa-list me-2"></i>View Rooms & Beds</a>
+                </div>
+                <hr class="my-3">
+                <div class="row text-center">
+                    <div class="col-6">
+                        <div class="bg-light rounded p-2">
+                            <i class="fas fa-door-open fa-2x text-secondary"></i>
+                            <h5 class="mt-2 mb-0">Total Rooms</h5>
+                            <p class="h4 fw-bold">{{ rooms|length }}</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="bg-light rounded p-2">
+                            <i class="fas fa-bed fa-2x text-secondary"></i>
+                            <h5 class="mt-2 mb-0">Total Beds</h5>
+                            <p class="h4 fw-bold">{{ rooms|sum(attribute='total_beds') }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rooms information Section  -->
+<div class="card shadow-sm">
+    <div class="card-header bg-white border-0 py-3">
+        <h3 class="mb-0"><i class="fas fa-hospital me-2 text-primary"></i>Rooms & Active Beds Overview</h3>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            {% for room in rooms %}
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-white py-2">
+                        <strong><i class="fas fa-door-open me-1 text-primary"></i>Room {{ room.id }} ({{ room.room_type }})</strong><br>
+                        <small class="text-muted">{{ room.department.name }}</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <span class="badge bg-secondary">Total Active Beds: {{ room.beds|selectattr('is_active', 'equalto', True)|list|length }}</span>
+                        </div>
+                        <ul class="list-unstyled">
+                            {% for bed in room.beds if bed.is_active %}
+                            <li class="mb-1">
+                                <i class="fas fa-bed me-1"></i>Bed {{ bed.id }}:
+                                {% if bed.is_occupied %}
+                                    <span class="badge bg-danger ms-2">Occupied</span>
+                                {% else %}
+                                    <span class="badge bg-success ms-2">Free</span>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-scale {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    }
+    .hover-scale:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+    }
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+    .btn-outline-primary {
+        border-width: 2px;
+    }
+    .btn-outline-primary:hover {
+        transform: translateX(5px);
+        transition: transform 0.2s;
+    }
+    .card-header {
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .table th, .table td {
+        vertical-align: middle;
+    }
+    .badge {
+        font-weight: 500;
+        padding: 0.4rem 0.7rem;
+    }
+    .list-unstyled li {
+        font-size: 0.9rem;
+        padding: 0.2rem 0;
+    }
+</style>
+
+{% endblock %}

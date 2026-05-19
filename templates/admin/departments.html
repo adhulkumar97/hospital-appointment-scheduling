@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bg-gradient-primary text-white rounded p-4 mb-4 shadow-sm" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="display-6 fw-bold"><i class="fas fa-building me-2"></i>Departments</h1>
+            <p class="lead mb-0">Manage hospital departments</p>
+        </div>
+        <i class="fas fa-hospital-user fa-4x opacity-50"></i>
+    </div>
+</div>
+
+<div class="mb-3">
+    <a href="{{ url_for('add_department') }}" class="btn btn-primary"><i class="fas fa-plus-circle me-1"></i>Add New Department</a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-white border-0 py-3">
+        <h4 class="mb-0"><i class="fas fa-list-ul me-2 text-primary"></i>Department List</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </thead>
+                <tbody>
+                    {% for dept in departments %}
+                    <tr>
+                        <td>{{ dept.id }}</td>
+                        <td><i class="fas fa-hospital me-1 text-secondary"></i>{{ dept.name }}</td>
+                        <td>
+                            <form action="{{ url_for('delete_department', dept_id=dept.id) }}" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete this department? All doctors in it will lose department reference.')">
+                                    <i class="fas fa-trash-alt me-1"></i>Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+    .card-header {
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .table th, .table td {
+        vertical-align: middle;
+    }
+    .btn-sm {
+        transition: all 0.2s;
+    }
+    .btn-sm:hover {
+        transform: scale(1.02);
+    }
+</style>
+
+{% endblock %}
